@@ -3,7 +3,7 @@ Predicting the tags of competitive programming problems can guide learning and p
 
 # Overview of Methodology
 <p align="center">
-<img width="46%"  alt="Data Sourcing and Tagging" src="https://github.com/user-attachments/assets/32ab5526-db24-4733-8506-d96b036f325d" /> <img width="44%"  alt="TF-IDF + Numeric Constraints Training (1)" src="https://github.com/user-attachments/assets/8649f603-a6ed-4e02-85df-28fcfdf1594b" />
+<img width="46%"  alt="Data Sourcing and Tagging" src="https://github.com/user-attachments/assets/a1261ba5-8e21-4dbf-b89b-1683e43a1fad" /> <img width="44%"  alt="TF-IDF + Numeric Constraints Training (1)" src="https://github.com/user-attachments/assets/9d2cae4a-f89c-4d19-a2b7-a71c8ab76a6f" />
 </p>
 
 **Figure 1 | Data sourcing, filtering, and tagging workflow.**        
