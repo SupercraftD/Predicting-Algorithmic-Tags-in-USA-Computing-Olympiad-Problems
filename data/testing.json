@@ -1,0 +1,569 @@
+[
+    {
+        "uniqueId": "usaco-711",
+        "name": "Why Did the Cow Cross the Road",
+        "difficulty": "Bronze",
+        "tags": [
+            "Greedy & Implementation"
+        ],
+        "constraints": [
+            100
+        ],
+        "url": "http://www.usaco.org/index.php?page=viewproblem2&cpid=711",
+        "text": "While the age-old question of why chickens cross roads has been addressed in\ngreat depth by the scientific community, surprisingly little has been published\nin the research literature on the related subject of cow crossings.  Farmer\nJohn, well-aware of the importance of this issue, is thrilled when he is\ncontacted by a local university asking for his assistance in conducting a\nscientific study of why cows cross roads.  He eagerly volunteers to help.\n\nAs part of the study, Farmer John has been asked to document the number of times\neach of his cows crosses the road.  He carefully logs data about his cows'\nlocations, making a series of $N$ observations over the course of a single day. \nEach observation records the ID number of a cow (an integer in the range\n$1 \\ldots 10$, since Farmer John has 10 cows), as well as which side of the road\nthe cow is on.  \n\nBased on the data recorded by Farmer John, please help him count the total\nnumber of confirmed crossings.  A confirmed crossing occurs when a consecutive\nsightings of a cow place it on different sides of the road.\n\nINPUT FORMAT (file crossroad.in):\nThe first line of input contains the number of observations, $N$, a positive\ninteger at most 100. Each of the next $N$ lines contains one observation, and\nconsists of a cow ID number followed by its position indicated by either zero or\none (zero for one side of the road, one for the other side).\n\nOUTPUT FORMAT (file crossroad.out):\nPlease compute the total number of confirmed crossings.\n\nSAMPLE INPUT:\n8\n3 1\n3 0\n6 0\n2 1\n4 1\n3 0\n4 0\n3 1\nSAMPLE OUTPUT: \n3\n\nIn this example, cow 3 crosses twice -- she first appears on side 1, then later appears\non side 0, and then later still appears back on side 1. Cow 4 definitely crosses\nonce.  Cows 2 and 6 do not appear to cross.\n\nProblem credits: Brian Dean\n"
+    },
+    {
+        "uniqueId": "usaco-988",
+        "name": "Photoshoot",
+        "difficulty": "Bronze",
+        "tags": [
+            "Greedy & Implementation"
+        ],
+        "constraints": [
+            1000
+        ],
+        "url": "http://www.usaco.org/index.php?page=viewproblem2&cpid=988",
+        "text": "Farmer John is lining up his $N$ cows ($2\\le N\\le 10^3$), numbered $1\\ldots N$, \nfor a photoshoot. FJ initially planned for the $i$-th cow from the left to be\nthe cow numbered $a_i,$ and wrote down the permutation $a_1,a_2,\\ldots,a_N$ on a\nsheet of paper. Unfortunately, that paper was recently stolen by Farmer Nhoj!\n\nLuckily, it might still be possible for FJ to recover the permutation that he\noriginally wrote down. Before the sheet was stolen, Bessie recorded the sequence\n$b_1,b_2,\\ldots,b_{N-1}$ that satisfies $b_i=a_i+a_{i+1}$ for each\n$1\\le i<N.$\n\nBased on Bessie's information, help FJ restore the \"lexicographically minimum\"\npermutation $a$ that could have produced $b$. A permutation $x$ is\nlexicographically smaller than a permutation $y$  if for some $j$, $x_i=y_i$ for\nall $i<j$ and $x_j<y_j$ (in other words, the two permutations are identical up\nto a certain point, at which $x$ is smaller than $y$). It is guaranteed that at\nleast one such $a$ exists.\n\nSCORING:\nTest cases 2-4 satisfy $N\\le 8.$Test cases 5-10 satisfy no additional constraints.\n\nINPUT FORMAT (file photo.in):\nThe first line of input contains a single integer $N.$\n\nThe second line contains $N-1$ space-separated integers\n$b_1,b_2,\\ldots,b_{N-1}.$\n\nOUTPUT FORMAT (file photo.out):\nA single line with $N$ space-separated integers $a_1,a_2,\\ldots,a_{N}.$\n\nSAMPLE INPUT:\n5\n4 6 7 6\nSAMPLE OUTPUT: \n3 1 5 2 4\n\n$a$ produces $b$ because $3+1=4$, $1+5=6$, $5+2=7$, and $2+4=6.$\n\n\nProblem credits: Benjamin Qi and Chris Zhang\n"
+    },
+    {
+        "uniqueId": "usaco-1083",
+        "name": "Uddered but not Herd",
+        "difficulty": "Bronze",
+        "tags": [
+            "Greedy & Implementation"
+        ],
+        "url": "http://www.usaco.org/index.php?page=viewproblem2&cpid=1083",
+        "text": "A little known fact about cows is that they have their own version of the\nalphabet, the \"cowphabet\".  It consists of the 26 letters 'a' through 'z', but\nwhen a cow speaks the cowphabet, she lists these letters in a specific ordering\nthat might be different from the order 'abcdefghijklmnopqrstuvwxyz' we are used to\nhearing.\n\nTo pass the time, Bessie the cow has been humming the cowphabet over and  over\nagain, and Farmer John is curious how many times she's hummed it.\n\nGiven a lowercase string of letters that Farmer John has heard Bessie say,\ncompute the minimum number of times Bessie must have hummed the entire cowphabet\nin order for Farmer John to have heard the given string. Farmer John isn't\nalways paying attention to what Bessie hums, and so he might have missed some of\nthe letters that Bessie has hummed.  The string you are told consists of just\nthe letters that he remembers hearing.\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe first line of input contains the 26 lowercase letters 'a' through 'z' in the\norder they appear in the cowphabet.  The next line contains the string  of\nlowercase letters that Farmer John heard Bessie say.  This string has length at\nleast $1$ and at most $1000$.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nPrint the minimum number of times Bessie must have hummed the entire cowphabet.\n\nSAMPLE INPUT:\nabcdefghijklmnopqrstuvwxyz\nmood\nSAMPLE OUTPUT: \n3\n\nIn this example, the cowphabet is ordered the same as the normal alphabet.\n\nBessie must have hummed the cowphabet at least three times. It is possible for\nBessie to have only hummed the cowphabet three times, and for Farmer John to\nhave heard the letters in uppercase as denoted below.\n\n\nabcdefghijklMnOpqrstuvwxyz\nabcdefghijklmnOpqrstuvwxyz\nabcDefghijklmnopqrstuvwxyz\n\nSCORING:\nIn test cases 2-5, the cowphabet is the same as the normal alphabet.Test cases 6-10 satisfy no additional constraints.\n\n\nProblem credits: Nick Wu\n",
+        "constraints": [
+            1000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1086",
+        "name": "Dance Mooves",
+        "difficulty": "Silver",
+        "tags": [
+            "Graphs & Trees"
+        ],
+        "url": "http://www.usaco.org/index.php?page=viewproblem2&cpid=1086",
+        "text": "Farmer John\u2019s cows are showing off their new dance mooves! \n\nAt first, all $N$ cows ($2\\le N\\le 10^5$) stand in a line with cow $i$ in the\n$i$th position in line.  The sequence of dance mooves is given by $K$\n($1\\le K\\le 2\\cdot 10^5$) pairs of positions\n$(a_1,b_1), (a_2,b_2), \\ldots, \n(a_{K},b_{K})$.  In each minute $i = 1 \\ldots K$\nof the dance, the cows in positions $a_i$ and $b_i$ in line swap.  The same $K$\nswaps happen again in minutes $K+1 \\ldots 2K$, again in minutes\n$2K+1 \\ldots 3K$, and so on, continuing indefinitely in a cyclic fashion.  In\nother words,\n\nIn minute $1$, the cows at positions $a_1$ and $b_1$ swap. In minute $2$, the cows at positions $a_2$ and $b_2$ swap. ...In minute $K$, the cows in positions $a_{K}$ and $b_{K}$ swap.In minute $K+1$, the cows in positions $a_{1}$ and $b_{1}$ swap.In minute $K+2$, the cows in positions $a_{2}$ and $b_{2}$ swap.and so on ...\nFor each cow, please determine the number of unique positions in the line she\nwill ever occupy.\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe first line contains integers $N$ and $K$.  Each of the next $K$ lines \ncontains $(a_1,b_1) \\ldots (a_K, b_K)$ ($1\\le a_i<b_i\\le N$).\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nPrint $N$ lines of output, where the $i$th line contains the number of unique\npositions that cow $i$ reaches.\n\nSAMPLE INPUT:\n5 4\n1 3\n1 2\n2 3\n2 4\nSAMPLE OUTPUT: \n4\n4\n3\n4\n1\n\nCow $1$ reaches positions $\\{1,2,3,4\\}$.Cow $2$ reaches positions $\\{1,2,3,4\\}$.Cow $3$ reaches positions $\\{1,2,3\\}$.Cow $4$ reaches positions $\\{1,2,3,4\\}$.Cow $5$ never moves, so she never leaves position $5$.\nSCORING:\nTest cases 1-5 satisfy $N\\le 100, K\\le 200$.Test cases 6-10 satisfy $N\\le 2000, K\\le 4000$.Test cases 11-20 satisfy no additional constraints.\n\n\nProblem credits: Chris Zhang\n",
+        "constraints": [
+            100000,
+            200000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1014",
+        "name": "Swapity Swapity Swap",
+        "difficulty": "Silver",
+        "tags": [
+            "Graphs & Trees"
+        ],
+        "url": "http://www.usaco.org/index.php?page=viewproblem2&cpid=1014",
+        "text": "Farmer John's $N$ cows ($1\\le N\\le 10^5$) are standing in a line. The $i$th cow\nfrom the left has label $i$ for each $1\\le i\\le N$.\n\nFarmer John has come up with a new morning exercise routine for the cows.  He \nhas given the cows $M$ pairs of integers $(L_1,R_1) \\ldots (L_M, R_M)$, where\n$1 \\leq M \\leq 100$.  He then tells the cows to repeat the following $M$-step\nprocess exactly $K$ ($1\\le K\\le 10^9$) times:\n\nFor each $i$ from $1$ to $M$:\nThe sequence of cows currently in positions $L_i \\ldots R_i$ from the left\nreverse their order.\n\nAfter the cows have repeated this process exactly $K$ times, please output the\nlabel of the $i$th cow from the left for each $1\\le i\\le N$.\n\nSCORING:\nTest case 2 satisfies $N=K=100$.Test cases 3-5 satisfy $K\\le 10^3$.Test cases 6-10 satisfy no additional constraints.\n\nINPUT FORMAT (file swap.in):\nThe first line contains $N$, $M$, and $K$.  For each $1\\le i\\le M$, line $i+1$\nline contains $L_i$ and $R_i$, both integers in the range $1 \\ldots N$, where\n$L_i < R_i$.\n\nOUTPUT FORMAT (file swap.out):\nOn the $i$th line of output, print the $i$th element of the array after the\ninstruction string has been executed $K$ times.\n\nSAMPLE INPUT:\n7 2 2\n2 5\n3 7\nSAMPLE OUTPUT: \n1\n2\n4\n3\n5\n7\n6\n\nInitially, the order of the cows is $[1,2,3,4,5,6,7]$ from left to right.  After\nthe first step of the process, the order is $[1,5,4,3,2,6,7]$. After the second\nstep of the process, the order is $[1,5,7,6,2,3,4]$.  Repeating both steps a\nsecond time yields the output of the sample.\n\n\nProblem credits: Brian Dean\n",
+        "constraints": [
+            100000,
+            1000000000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1231",
+        "name": "Subset Equality",
+        "difficulty": "Silver",
+        "tags": [
+            "Strings"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1231",
+        "text": "The cows are trying out a new method of exchanging coded messages with each-other\nwhere they mix irrelevant letters in among relevant letters to make the messages\nhard to decode.  \n\nThe cows transmit two strings $s$ and $t$ each of length at most $10^5$ consisting\nonly of the lowercase English letters 'a' through 'r'.  To try and make sense\nof this coded message, you will be given $Q$ queries ($1 \\leq Q \\leq 10^5$). Each query provides a subset of the\nlowercase English letters from 'a' to 'r.' You need to determine for each query\nwhether $s$ and $t$, when restricted only to the letters in the query, are\nequal.\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nFirst line contains $s$.\n\nSecond line contains $t$.\n\nThird line contains $Q$.\n\nNext $Q$ lines each contain a query string. Within a query string, no letters\nare repeated. Furthermore, all query strings are in sorted order, and no query\nstring appears more than once.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nFor each query, print 'Y' if $s$ and $t$, when restricted only to the letters in\nthe query, are equal, or 'N' otherwise.\n\nSAMPLE INPUT:\naabcd\ncaabd\n4\na\nac\nabd\nabcd\nSAMPLE OUTPUT: \nYNYN\n\nFor the first query, both strings become \"aa\" when restricted only to 'a.'\n\nFor the second query, the first string becomes \"aac\" while the second string\nbecomes \"caa.\"\n\nSCORING:\nTest case 2 satisfies $|s|, |t|, Q \\le 1000$.Test cases 3-11 satisfy no additional constraints.\n\n\nProblem credits: Danny Mittal\n",
+        "constraints": [
+            100000,
+            100000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1252",
+        "name": "Feeding the Cows",
+        "difficulty": "Bronze",
+        "tags": [
+            "Greedy & Implementation",
+            "Two Pointers & Sliding Window"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1252",
+        "text": "Farmer John has $N$ ($1 \\le {N} \\le {10^5}$) cows, the breed of each being\neither a Guernsey or a Holstein. They have lined up horizontally with the cows occupying positions \nlabeled from\n$1\\dots N$.\n\nSince all the cows are hungry, FJ decides to plant grassy patches on some\nof the positions $1\\dots N$. Guernseys and Holsteins prefer different types of\ngrass, so if Farmer John decides to plant grass at some location, he must choose\nto planting either Guernsey-preferred grass or Holstein-preferred grass --- he\ncannot plant both at the same location. Each patch of grass planted can feed an\nunlimited number of cows of the appropriate breed. \n\nEach cow is willing to move a maximum of $K$ ($0 \\le {K} \\le N-1$) positions to\nreach a patch. Find the minimum number of patches needed to feed all the cows.\nAlso, print a configuration of patches that uses the minimum amount of patches\nneeded to feed the cows. Any configuration that satisfies the above conditions\nwill be considered correct.\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nEach input contains $T$ test cases, each describing an arrangement of cows. The\nfirst line of input contains $T$ ($1 \\le T \\le 10$). Each of the $T$ test cases\nfollow.\n\nEach test case starts with a line containing $N$ and $K$. The next line will\ncontain a string of length $N$, where each character denotes the breed of the\n$i$th cow (G meaning Guernsey and H meaning Holstein).\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nFor each of the $T$ test cases, please write two lines of output. For the first\nline, print the minimum number of patches needed to feed the cows. For the\nsecond line, print a string of length $N$ that describes a configuration  that\nfeeds all the cows with the minimum number of patches. The $i$th character,\ndescribing the $i$th position, should be a '.' if there is no patch, a 'G' if\nthere is a patch that feeds Guernseys, and a 'H' if it feeds Holsteins. Any\nvalid configuration will be accepted.\n\nSAMPLE INPUT:\n6\n5 0\nGHHGG\n5 1\nGHHGG\n5 2\nGHHGG\n5 3\nGHHGG\n5 4\nGHHGG\n2 1\nGH\nSAMPLE OUTPUT: \n5\nGHHGG\n3\n.GH.G\n2\n..GH.\n2\n...GH\n2\n...HG\n2\nHG\n\nNote that for some test cases, there are multiple acceptable configurations that\nmanage to feed all cows while using the minimum number of patches. For example,\nin the fourth test case, another acceptable answer would be:\n\n\n.GH..\n\nThis corresponds to placing a patch feeding Guernseys on the 2nd position and a\npatch feeding Holsteins on the third position. This uses the optimal number of\npatches and ensures that all cows are within 3 positions of a patch they prefer.\n\n\n\nSCORING:\nInputs 2 through 4 have $N \\le 10$. Inputs 5 through 8 have $N \\le 40$. Inputs 9 through 12 have $N \\le 10^5$. \n\n\nProblem credits: Mythreya Dharani\n",
+        "constraints": [
+            100000,
+            10
+        ]
+    },
+    {
+        "uniqueId": "usaco-1253",
+        "name": "Reverse Engineering",
+        "difficulty": "Bronze",
+        "tags": [
+            "Greedy & Implementation"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1253",
+        "text": "Elsie has a program that takes as input an array of $N$ ($1\\le N\\le 100$)\nvariables $b[0],\\dots,b[N-1]$, each equal to zero or one,  and returns the\nresult of applying a sequence of if / else if / else statements on the input. \nEach statement examines the value of at most one input variable, and returns \neither zero or one.  An example of such a program might be:\n\n\nif (b[1] == 1) return 1;\nelse if (b[0] == 0) return 0;\nelse return 1;\n\nFor example, if the input to the program above is \"10\" (that is, $b[0] = 1$ and\n$b[1] = 0$), then the output should be 1.\n\nElsie has told Bessie the correct output for $M$ ($1\\le M\\le 100$) different\ninputs. Bessie is now trying to reverse engineer Elsie's program. Unfortunately,\nElsie might have lied; it may be the case that no program of the form above is\nconsistent with what Elsie said. \n\nFor each of $T$ ($1\\le T\\le 10$) test cases, determine whether Elsie must be\nlying or not.\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe first line contains $T$, the number of test cases.\n\nEach test case starts with two integers $N$ and $M$, followed by $M$ lines, each\ncontaining a string of $N$ zeros and ones representing an input (that is, the\nvalues of $b[0] \\ldots b[N-1]$) and an additional character (zero or one)\nrepresenting the output. Consecutive test cases are separated by newlines.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nFor each test case, output \"OK\" or \"LIE\" on a separate line.\n\nSAMPLE INPUT:\n4\n\n1 3\n0 0\n0 0\n1 1\n\n2 4\n00 0\n01 1\n10 1\n11 1\n\n1 2\n0 1\n0 0\n\n2 4\n00 0\n01 1\n10 1\n11 0\nSAMPLE OUTPUT: \nOK\nOK\nLIE\nLIE\n\nHere's a valid program for the first test case:\n\n\nif (b[0] == 0) return 0;\nelse return 1;\n\nAnother valid program for the first test case:\n\n\nif (b[0] == 1) return 1;\nelse return 0;\n\nA valid program for the second test case:\n\n\nif (b[1] == 1) return 1;\nelse if (b[0] == 0) return 0;\nelse return 1;\n\nClearly, there is no valid program corresponding to the third test case, because\nElsie's program must always produce the same output for the same input.\n\nIt may be shown that there is no valid program corresponding to the last test\ncase.\n\nSCORING:\nInputs 2 and 3 have $N = 2$. Inputs 4 and 5 have $M = 2$. Inputs 6 through 12 have no additional constraints. \n\n\nProblem credits: Benjamin Qi\n",
+        "constraints": [
+            100,
+            10
+        ]
+    },
+    {
+        "uniqueId": "usaco-1256",
+        "name": "Range Reconstruction",
+        "difficulty": "Silver",
+        "tags": [
+            "Greedy & Implementation"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1256",
+        "text": "Bessie has an array $a_1, \\ldots, a_N$, where $1 \\leq N \\leq 300$ and\n$0 \\leq a_i \\leq 10^9$ for all $i$. She won't tell you $a$ itself, but she will\ntell you the range of each subarray of $a$. That is, for each pair of indices\n$i \\leq j$, Bessie tells you $r_{i, j} = \\max a[i\\ldots j] - \\min a[i\\ldots j]$.\nGiven these values of $r$, please construct an array that could have been\nBessie's original array. The values in your array should be in the range\n$[-10^9, 10^9]$.\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe first line contains $N$.\n\nAnother $N$ lines follow. The $i$th of these lines contains the integers\n$r_{i, i}, r_{i, i + 1}, \\ldots, r_{i, N}$.\n\nIt is guaranteed that there is some array $a$ with values in the range\n$[0, 10^9]$ such that for all $i \\leq j$,\n$r_{i, j} = \\max a[i\\ldots j] - \\min a[i\\ldots j]$. \n\nOUTPUT FORMAT (print output to the terminal / stdout):\nOutput one line containing $N$ integers $b_1, b_2, \\ldots, b_N$ in the range\n$[-10^9, 10^9]$ representing your array. They must satisfy\n$r_{i, j} = \\max b[i\\ldots j] - \\min b[i\\ldots j]$ for all $i \\leq j$.\n\nSAMPLE INPUT:\n3\n0 2 2\n0 1\n0\nSAMPLE OUTPUT: \n1 3 2\n\nFor example, $r_{1, 3} = \\max a[1\\ldots 3] - \\min a[1\\ldots 3] = 3 - 1 = 2$.\n\nSAMPLE INPUT:\n3\n0 1 1\n0 0\n0\nSAMPLE OUTPUT: \n0 1 1\n\nThis example satisfies the constraints for subtask 1.\n\nSAMPLE INPUT:\n4\n0 1 2 2\n0 1 1\n0 1\n0\nSAMPLE OUTPUT: \n1 2 3 2\n\nThis example satisfies the constraints for subtask 2.\n\nSAMPLE INPUT:\n4\n0 1 1 2\n0 0 2\n0 2\n0\nSAMPLE OUTPUT: \n1 2 2 0\n\nSCORING:\nTest 5 satisfies $r_{1,N} \\leq 1$.Tests 6-8 satisfy $r_{i,i+1} = 1$ for all $1 \\leq i < N$. Tests 9-14 satisfy no additional constraints.\n\n\nProblem credits: Danny Mittal\n",
+        "constraints": [
+            300,
+            1000000000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1262",
+        "name": "Palindromes",
+        "difficulty": "Platinum",
+        "tags": [
+            "Dynamic Programming"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1262",
+        "text": "The United Cows of Farmer John (UCFJ) are at the annual hoofball championships! UCFJ's team\nof $N$ $(1 \\le N \\le 7500)$ cows won a gold medal in hoofball,  narrowly beating\nout Farmer Nhoj's team. \nThe cows have already lined up for the awards ceremony. They want FJ to take \n$\\frac{N(N+1)}{2}$ group photos, one for each contiguous subsequence of the\nlineup.\n\nHowever, FJ, as the coach of the team, is very particular about how the cows\nshould be lined up. Specifically, he refuses to take a picture of a subsequence\nunless it forms a *palindrome,* meaning that the breed of the $i$th cow from the\nleft end of the subsequence must be the same as the breed of the $i$th cow from \nthe right end of the subsequence for all positive integers $i$ less than or\nequal to the length of the subsequence. Each cow's breed is either Guernsey or\nHolstein.\n\nFor each of the $\\frac{N(N+1)}{2}$ contiguous subsequences of the lineup, count \nthe minimum number of transpositions necessary to rearrange that subsequence\ninto a palindrome (or $-1$ if it is impossible to do so). A single transposition\nconsists of taking two adjacent cows in the subsequence and swapping them. \nOutput the sum of all these counts.\n\nNote that the number of transpositions needed is calculated independently for\neach contiguous subsequence (the cows return to their initial positions between\nphotos).\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe lineup, represented by a string of Gs and Hs of length $N$.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nThe sum of the aforementioned quantity over all $\\frac{N(N+1)}{2}$ contiguous \nsubsequences of the lineup.\n\nSAMPLE INPUT:\nGHHGGHHGH\nSAMPLE OUTPUT: \n12\n\nThe first four contiguous subsequences are G, GH, GHH, and GHHG. Both G and GHHG\nare already palindromes, so they contribute $0$ to the sum. GHH can be\nrearranged into a palindrome using a single transposition, so it contributes $1$\nto the sum. GH cannot be rearranged into a palindrome using any number of \ntranspositions, so it contributes $-1$ to the sum.\n\nAnother contiguous subsequence that contributes to the sum is HHGG. This can be\nrearranged into a palindrome using two transpositions.\n\nSCORING:\nThere are fifteen test cases aside from the sample, one for each of \n$N \\in [100, 200, 500, 1000, 2000, 5000, 5000, 5000, 5000, 5000, 7500, 7500, 7500, 7500, 7500]$.\n\n\n\nProblem credits: Mythreya Dharani and Benjamin Qi\n",
+        "constraints": [
+            7500
+        ]
+    },
+    {
+        "uniqueId": "usaco-641",
+        "name": "Field Reduction",
+        "difficulty": "Bronze",
+        "tags": [
+            "Geometry",
+            "Greedy & Implementation"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=641",
+        "text": "Farmer John's $N$ cows ($3 \\leq N \\leq 50,000$) are all located at distinct\npositions in his two-dimensional field.  FJ wants to enclose all of the cows\nwith a rectangular fence whose sides are parallel to the x and y axes, and he\nwants this fence to be as small as possible so that it contains every cow (cows\non the boundary are allowed).  \n\nFJ is unfortunately on a tight budget due to low milk production last quarter.\nHe would therefore like to build an even smaller fenced enclosure if possible,\nand he is willing to sell one cow from his herd to make this possible.  \n\nPlease help FJ compute the smallest possible area he can enclose with his fence\nafter removing one cow from his herd (and thereafter building the tightest \nenclosing fence for the remaining $N-1$ cows).\n\nFor this problem, please treat cows as points and the fence as a collection of\nfour line segments (i.e., don't think of the cows as \"unit squares\").  Note that\nthe answer can be zero, for example if all remaining cows end up standing  in a\ncommon vertical or horizontal line.  Finally, note that since $N$ can be quite\nlarge, you may need to be careful in how you solve this problem to make sure\nyour program runs quickly enough!\n\nINPUT FORMAT (file reduce.in):\nThe first line of input contains $N$.  The next $N$ lines each contain two\nintegers specifying the location of a cow.  Cow locations are positive integers\nin the range $1 \\ldots 40,000$.\n\nOUTPUT FORMAT (file reduce.out):\nWrite a single integer specifying the minimum area FJ can enclose with his fence\nafter removing one carefully-chosen cow from his herd.\n\nSAMPLE INPUT:\n4\n2 4\n1 1\n5 2\n17 25\nSAMPLE OUTPUT: \n12\n\n\nProblem credits: Brian Dean\n",
+        "constraints": [
+            50000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1036",
+        "name": "Social Distancing II",
+        "difficulty": "Bronze",
+        "tags": [
+            "Search & Sort",
+            "Greedy & Implementation"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1036",
+        "text": "Farmer John is worried for the health of his cows after an outbreak of the \nhighly contagious bovine disease COWVID-19.  \n\nDespite his best attempt at making his $N$ cows ($1 \\leq N \\leq 1000$)  practice\n\"social distancing\", many of them still unfortunately contracted  the disease. \nThe cows, conveniently numbered $1 \\ldots N$, are each standing at distinct\npoints along a long path (essentially a one-dimensional number line), with cow\n$i$ standing at position $x_i$.  Farmer John knows that there is a radius $R$\nsuch that any cow standing up to and including $R$ units away from an infected\ncow will also become infected (and will then pass the infection along to\nadditional cows within $R$ units away, and so on).\n\nUnfortunately, Farmer John doesn't know $R$ exactly.  He does however know which\nof his cows are infected.  Given this data, please determine the minimum\npossible number of cows that were initially infected with the disease.\n\nINPUT FORMAT (file socdist2.in):\nThe first line of input contains $N$.  The next $N$ lines each describe one cow\nin terms of two integers, $x$ and $s$, where $x$ is the position\n($0 \\leq x \\leq 10^6$), and $s$ is 0 for a healthy cow or 1 for a sick cow. At\nleast one cow is sick, and all cows that could possibly have become sick from\nspread of the disease have now become sick.\n\nOUTPUT FORMAT (file socdist2.out):\nPlease output the minimum number of cows that could have initially been sick,\nprior to any spread of the disease.\n\nSAMPLE INPUT:\n6\n7 1\n1 1\n15 1\n3 1\n10 0\n6 1\nSAMPLE OUTPUT: \n3\n\nIn this example, we know that $R < 3$ since otherwise the cow at position 7\nwould have infected the cow at position 10.  Therefore, at least 3 cows must\nhave started out infected -- one of the two cows at positions 1 and 3, one of\nthe two cows at positions 6 and 7, and the cow at position 15.\n\n\nProblem credits: Brian Dean\n",
+        "constraints": [
+            1000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1132",
+        "name": "Acowdemia II",
+        "difficulty": "Bronze",
+        "tags": [
+            "Greedy & Implementation"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1132",
+        "text": "Bessie is applying to computer science graduate school, and has secured an\ninterview at a prestigious computer science lab. However, to avoid offending\nanyone, Bessie is interested in determining the relative seniority of the $N$\ncurrent members of the lab ($1 \\leq N \\leq 100$). No two members of the lab have\nthe same seniority, but determining their seniorities may be tricky. To do so,\nBessie will look at the lab's publications.\n\nEach publication contains an author list, which is an ordering of all $N$ lab\nmembers. The list is in decreasing order of the effort each lab member\ncontributed to the paper. If multiple researchers put in equivalent effort, then\nthey are ordered alphabetically. Since more senior lab members have additional\nadministrative duties, a  a more senior researcher never puts in more effort\nthan a more junior researcher. \n\nFor example, in a lab consisting of a junior student Elsie, a more senior Prof.\nMildred, and a very senior Prof. Dean, then there may be a paper\n(Elsie-Mildred-Dean) if all of them put in different amounts of effort (i.e.\nElsie puts in more effort than Mildred, and Mildred more than Dean). However,\nthey may also have a paper in the order (Elsie-Dean-Mildred) if Mildred and Dean\nput in the same amount of effort and Elsie puts in more effort.\n\nGiven $K$ publications from this lab ($1 \\leq K \\leq 100$), help Bessie\ndetermine for all pairs of researchers in this lab who is more senior, if it's\npossible to tell.\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe first line contains two integers, $K$ and $N$.\n\nThe second line contains $N$ space-separated strings, giving the names of the\nmembers of  the lab.  Each consists of lowercase letters and is at most 10\ncharacters long.\n\nEach of the next $K$ lines contains $N$ space-separated strings, indicating the\nauthor list for one publication.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nThe output should consist of $N$ lines, with $N$ characters per line. On line\n$i$, for any $j \\neq i$, character $j$ should be $1$ if the $i$th member is\ndefinitely more senior than the $j$th member, $0$ if the $i$th member is\ndefinitely more junior than the $j$th member, and $?$ if it's impossible to tell\nfrom the given publications.\n\nCharacter $i$ on line $i$ should be $B$ because that's Bessie's favorite letter.\n\nSAMPLE INPUT:\n1 3\ndean elsie mildred\nelsie mildred dean\nSAMPLE OUTPUT: \nB11\n0B?\n0?B\n\nIn this first example, the single paper (elsie-mildred-dean) does not give \nenough information to determine whether Elsie is more senior than Mildred or\nvice versa.  However, one can deduce that Dean must be more senior than both, so\nthe seniority orderings Elsie<Mildred<Dean and Mildred<Elsie<Dean are both\npossible.\n\nSAMPLE INPUT:\n2 3\nelsie mildred dean\nelsie mildred dean\nelsie dean mildred\nSAMPLE OUTPUT: \nB00\n1B0\n11B\n\nIn this second example, the only seniority ordering consistent with both papers\nis Elsie<Mildred<Dean, since one can second paper builds on the knowledge  from\nthe first example above and helps us deduce that Mildred is also more senior than\nElsie.\n\n\nProblem credits: Dhruv Rohatgi\n",
+        "constraints": [
+            100,
+            100
+        ]
+    },
+    {
+        "uniqueId": "usaco-1299",
+        "name": "Hungry Cow",
+        "difficulty": "Bronze",
+        "tags": [
+            "Greedy & Implementation"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1299",
+        "text": "\nBessie is a hungry cow. Each day, for dinner, if there is a haybale in the barn,\nshe will eat one haybale. Farmer John does not want Bessie to starve, so some\ndays he sends a delivery of haybales, which arrive in the morning (before\ndinner). In particular, on day $d_i$, Farmer John sends a delivery of $b_i$\nhaybales ($1\\leq d_i \\leq 10^{14}$, $1 \\leq b_i \\leq 10^9$).\n\nCompute the total number of haybales Bessie will eat during the first $T$ days.\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe first line contains $N$ and $T$ ($1 \\le N \\le 10^5$, $1 \\le T \\le 10^{14}$).\n\nThe next $N$ lines each contain $d_i$ and $b_i$. It is  additionally guaranteed\nthat $1\\le d_1<d_2<\\dots < d_N\\le T$. \n\nOUTPUT FORMAT (print output to the terminal / stdout):\nOutput the number of haybales that Bessie will eat during the first $T$ days.\n\nNote that the large size of integers involved in this problem may require the\nuse of 64-bit integer data types (e.g., a \"long long\" in C/C++).\n\nSAMPLE INPUT:\n1 5\n1 2\nSAMPLE OUTPUT: \n2\n\nTwo haybales arrive on the morning of day $1$. Bessie eats one haybale for\ndinner on day $1$ and another haybale on day $2$. On days $3 \\ldots 5$, there\nare no more haybales for Bessie to eat. In total, Bessie eats $2$ haybales\nduring the first $5$ days. \n\nSAMPLE INPUT:\n2 5\n1 2\n5 10\nSAMPLE OUTPUT: \n3\n\nTwo haybales arrive on the morning of day $1$. Bessie eats one haybale on days\n$1$ and $2$. There are no haybales for Bessie to eat on days $3$ and $4$. On the\nmorning of day $5$, $10$ haybales arrive. Bessie eats one haybale for dinner on\nday $5$. In total, Bessie eats $3$ haybales during the first $5$ days.\n\nSAMPLE INPUT:\n2 5\n1 10\n5 10\nSAMPLE OUTPUT: \n5\n\n$10$ haybales arrive on the morning of day $1$. Bessie eats one haybale on days\n$1 \\ldots 4$. On the morning of day $5$, another $10$ haybales arrive, meaning\nthere are $16$ haybales in the barn. For dinner on day $5$, Bessie eats another\nhaybale. In total, Bessie eats $5$ haybales during the first $5$ days.\n\nSCORING:\nInputs 4-7: $T \\le 10^5$Inputs 8-13: No additional constraints.\n\n\nProblem credits: Brandon Wang\n",
+        "constraints": [
+            100000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1300",
+        "name": "Stamp Grid",
+        "difficulty": "Bronze",
+        "tags": [
+            "Search & Sort",
+            "Greedy & Implementation"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1300",
+        "text": "\nA stamp painting is a black and white painting on an $N \\times N$ canvas,\nwhere certain cells are inked while others are blank. It can be described by an\n$N\\times N$  array of characters ($1\\le N\\le 20$). The $i$th entry of the $j$th\ncolumn of the array is equal to * if the canvas contains ink at that square and\n. otherwise.\n\nBessie has a stamp painting that she would like to create, so Farmer John has\nlent her a single $K\\times K$ ($1\\le K\\le N$) stamp to do this and an empty\n$N \\times N$ canvas. Bessie can repeatedly rotate the stamp clockwise by\n$90^{\\circ}$  and stamp anywhere on the grid as long as the stamp is entirely\ninside the grid. Formally, to stamp, Bessie chooses integers $i,j$ such that\n$i \\in [1,N-K+1]$ and $j \\in [1, N-K+1]$; for each $(i',j')$ such that\n$1 \\le i', j' \\le K$, canvas cell $(i+i'-1, j+j'-1)$ is painted black if the\nstamp has ink at $(i', j')$. Bessie can rotate the stamp at any time between\nstampings. Once a canvas cell is painted black, it remains black.\n\nFarmer John is wondering whether it's possible for Bessie to create her desired\nstamp painting with his stamp. For each of $T$ ($1 \\le T \\le 100$) test cases,\nhelp Farmer John answer this question.\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe first line of input contains $T$, the number of test cases.\n\nEach test case starts with an integer $N$ followed by $N$ lines, each containing\na string of *s and .s, representing Bessie's desired stamp painting. The next\nline contains $K$ and is followed by $K$ lines, each containing a string of *s\nand .s, representing Farmer John's stamp.\n\nConsecutive test cases are separated by newlines.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nFor each test case, output \"YES\" or \"NO\" on separate lines.\n\nSAMPLE INPUT:\n4\n\n2\n**\n*.\n1\n*\n\n3\n.**\n.**\n***\n2\n.*\n**\n\n3\n...\n.*.\n...\n3\n.*.\n...\n...\n\n3\n**.\n.**\n..*\n2\n.*\n*.\nSAMPLE OUTPUT: \nYES\nYES\nNO\nYES\n\nIn the first test case, Bessie can perform the following sequence of stampings:\nStamp at $(1,1)$Stamp at $(1,2)$Stamp at $(2,1)$\nIn the second test case, Bessie can perform the following sequence of stampings:\nStamp at $(2,2)$Stamp at $(2,1)$Rotate\n$90^{\\circ}$Rotate $90^{\\circ}$ Stamp at $(1,2)$\nIn the third test case, it is impossible to paint the middle cell.\n\nIn the fourth test case, Bessie can perform the following sequence of stampings:\nRotate $90^{\\circ}$Stamp at $(1,1)$Stamp at\n$(1,2)$Stamp at $(2,2)$\n\nProblem credits: Benjamin Qi and Claire Zhang\n",
+        "constraints": [
+            100,
+            20
+        ]
+    },
+    {
+        "uniqueId": "usaco-1325",
+        "name": "Rotate and Shift",
+        "difficulty": "Bronze",
+        "tags": [
+            "Greedy & Implementation",
+            "Math & Combinatorics"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1325",
+        "text": "\n**Note: The time limit for this problem is 4s, 2x the default.**\nTo celebrate the start of spring, Farmer John's $N$ cows ($1 \\leq N \\leq 2 \\cdot 10^5$) have invented an intriguing new dance, where they stand in a circle and re-order themselves in a predictable way.\n\nSpecifically, there are $N$ positions around the circle, numbered sequentially from $0$ to $N-1$, with position $0$ following position $N-1$.  A cow resides at each position.  The cows are also numbered sequentially from $0$ to $N-1$.  Initially, cow $i$ starts in position $i$.  You are told a set of $K$ positions $0=A_1<A_2< \\ldots< A_K<N$ that are \"active\", meaning the cows in these positions are the next to move ($1 \\leq K \\leq N$).  \n\nIn each minute of the dance, two things happen.  First, the cows in the active positions rotate: the cow at position $A_1$ moves to position $A_2$, the cow at position $A_2$ moves to position $A_3$, and so on, with the cow at position $A_K$ moving to position $A_1$.  All of these $K$ moves happen simultaneously, so the after the rotation is complete, all of the active positions still contain exactly one cow.  Next, the active positions themselves shift:\n$A_1$ becomes $A_1+1$, $A_2$ becomes $A_2+1$, and so on (if $A_i = N-1$ for some active position, then $A_i$ circles back around to $0$).\n\nPlease calculate the order of the cows after $T$ minutes of the dance ($1\\le T\\le 10^9$).\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe first line contains three integers $N$, $K$, and $T$.\n\nThe second line contains $K$ integers representing the initial set of active positions\n$A_1,A_2, \\ldots A_K$.  Recall that $A_1 = 0$ and that these are given in increasing order.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nOutput the order of the cows after $T$ minutes, starting with the cow in position $0$, separated by\nspaces.\n\nSAMPLE INPUT:\n5 3 4\n0 2 3\nSAMPLE OUTPUT: \n1 2 3 4 0\n\nFor the example above, here are the cow orders and $A$ for the first four\ntimesteps:\n\n\nInitial, T = 0: order = [0 1 2 3 4], A = [0 2 3]\nT = 1: order = [3 1 0 2 4]\nT = 1: A = [1 3 4]\nT = 2: order = [3 4 0 1 2]\nT = 2: A = [2 4 0]\nT = 3: order = [2 4 3 1 0]\nT = 3: A = [3 0 1]\nT = 4: order = [1 2 3 4 0]\n\nSCORING:\nInputs 2-7: $N \\leq 1000, T \\leq 10000$Inputs 8-13: No additional constraints.\n\n\nProblem credits: Claire Zhang\n",
+        "constraints": [
+            200000,
+            200000
+        ]
+    },
+    {
+        "uniqueId": "usaco-618",
+        "name": "Circular Barn",
+        "difficulty": "Silver",
+        "tags": [
+            "Greedy & Implementation"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=618",
+        "text": "Being a fan of contemporary architecture, Farmer John has built a new barn in\nthe shape of a perfect circle.  Inside, the barn consists of a ring of $n$\nrooms,  numbered clockwise from $1 \\ldots n$ around the perimeter of the barn\n($3 \\leq n \\leq 1000$).   Each room has doors to its two neighboring rooms, and\nalso a door opening to the exterior of the barn.\n\nFarmer John owns $n$ cows, and he wants exactly one cow to end up in each room\nin the barn.  However, the cows, being slightly confused, line up at haphazard\ndoors, with possibly multiple cows lining up at the same door.  Precisely $c_i$\ncows line up outside the door to room $i$, so $\\sum c_i = n$.\n\nTo manage the process of herding the cows so that one cow ends up in each room,\nFarmer John wants to use the following approach: each cow enters at the door at\nwhich she initially lined up, then walks clockwise through the rooms until she\nreaches a suitable destination.  Given that a cow walking through $d$ doors\nconsumes $d^2$ energy, please determine the minimum amount of energy needed to\ndistribute the cows so one ends up in each room.  \n\nINPUT FORMAT (file cbarn.in):\nThe first line of input contains $n$.  Each of the remaining $n$ lines contain\n$c_1 \\ldots c_n$.\n\nOUTPUT FORMAT (file cbarn.out):\nPlease write out the minimum amount of energy consumed by the cows.  \n\nSAMPLE INPUT:\n10\n1\n0\n0\n2\n0\n0\n1\n2\n2\n2\nSAMPLE OUTPUT: \n33\n\nProblem credits: Brian Dean\n",
+        "constraints": [
+            1000
+        ]
+    },
+    {
+        "uniqueId": "usaco-942",
+        "name": "Left Out",
+        "difficulty": "Silver",
+        "tags": [
+            "Greedy & Implementation"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=942",
+        "text": "Farmer John is attempting to take a photograph of his herd of cows.  From past\nexperience, he knows this particular endeavor never usually ends well.  \n\nThis time, Farmer John has purchased an expensive drone in order to take an\naerial photo. To make the photo look as good as possible, he wants his cows all\nto be facing the same direction when the photo is taken.  The cows are currently arranged\nin an  $N \\times N$ grid ($2 \\leq N \\leq 1000$) inside a fenced-in square\npasture,  for example:\n\n\nRLR\nRRL\nLLR\n\nHere, an 'R' means a cow facing right, and an 'L' means a cow facing left. Since\nthe cows are packed together, Farmer John cannot walk up to an individual cow to\nmake it turn around.  All he can do is shout at any row or column of cows to\nturn around, causing L's to change to R's and R's to L's within the row or\ncolumn in question.  Farmer John can yell at as many rows or columns as he\nwants, even at the same row or column more than once.\n\nAs expected, Farmer John observes that he is unable to make his cows all face\none common direction.  The best he can do is get all but one of the cows to face\nthe same direction.  Please determine the identity of such a cow.\n\nINPUT FORMAT (file leftout.in):\nThe first line contains $N$.  The next $N$ lines describe rows $1 \\ldots N$ in \nthe grid of cows, each containing a string of length $N$.\n\nOUTPUT FORMAT (file leftout.out):\nPrint the row and column index of a cow such that if that cow were flipped,\nFarmer John could make all his cows face the same direction.  If no such cow\nexists, print -1.  If multiple such cows exist, print the one with the  smallest\nrow index, or if multiple such cows have the same smallest row index, print the\none with the smallest column index.\n\nSAMPLE INPUT:\n3\nRLR\nRRL\nLLR\nSAMPLE OUTPUT: \n1 1\n\nIn the example above, the cow in row 1, column 1 (the upper-left corner) is the\noffending cow, since Farmer John can shout at row 2 and column 3 to make all\nother cows face left, with just this cow facing right.\n\n\nProblem credits: Brian Dean\n",
+        "constraints": [
+            1000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1039",
+        "name": "Cereal",
+        "difficulty": "Silver",
+        "tags": [
+            "Greedy & Implementation"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1039",
+        "text": "Farmer John's cows like nothing more than cereal for breakfast!  In fact, the\ncows have such large appetites that they will each eat an entire box of cereal for a\nsingle meal.\n\nThe farm has recently received a shipment with $M$ different types of cereal\n$(1\\le M\\le 10^5)$ . Unfortunately, there is only one box of each cereal!  Each\nof the $N$ cows $(1\\le N\\le 10^5)$ has a favorite cereal and a second favorite\ncereal. When given a selection of cereals to choose from, a cow performs the\nfollowing process:\n\nIf the box of her favorite cereal is still available, take it and\nleave.Otherwise, if the box of her second-favorite cereal is still available, \ntake it and leave.Otherwise, she will moo with disappointment and leave without taking any\ncereal.\nThe cows have lined up to get cereal. For each $0 \\leq i \\leq N-1$, determine\nhow many cows would take a box of cereal if Farmer John removed the first $i$\ncows from the line.\n\nINPUT FORMAT (file cereal.in):\nThe first line contains two space-separated integers $N$ and $M.$\n\nFor each $1\\le i\\le N,$ the $i$-th line contains two space-separted integers\n$f_i$ and $s_i$ ($1\\le f_i,s_i\\le M$ and $f_i\\neq s_i$) denoting the favorite\nand second-favorite cereals of the $i$-th cow in line.\n\nOUTPUT FORMAT (file cereal.out):\nFor each $0\\le i\\le N-1,$ print a line containing the answer for $i.$\n\nSAMPLE INPUT:\n4 2\n1 2\n1 2\n1 2\n1 2\nSAMPLE OUTPUT: \n2\n2\n2\n1\n\nIf at least two cows remain, then exactly two of them get a box of cereal.\n\nSCORING:\nTest cases 2-3 satisfy $N,M\\le 1000.$ Test cases 4-10 satisfy no additional constraints. \n\n\nProblem credits: Dhruv Rohatgi\n",
+        "constraints": [
+            100000,
+            100000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1328",
+        "name": "Pareidolia",
+        "difficulty": "Silver",
+        "tags": [
+            "Strings",
+            "Dynamic Programming"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1328",
+        "text": "\n**Note: The time limit for this problem is 4s, 2x the default.**\nPareidolia is the phenomenon where your eyes tend to see familiar patterns in\nimages where none really exist -- for example seeing a face in a cloud.  As you\nmight imagine, with Farmer John's constant proximity to cows, he often sees\ncow-related patterns in everyday objects.  For example, if he looks at the\nstring \"bqessiyexbesszieb\", Farmer John's  eyes ignore some of the letters and\nall he sees is \"bessiebessie\".  \n\nGiven a string $s$, let $B(s)$ represent the maximum number of repeated copies\nof  \"bessie\" one can form by deleting zero or more of the characters from $s$. \nIn the example above, $B($\"bqessiyexbesszieb\"$) = 2$.\n\nComputing $B(s)$ is an interesting challenge, but Farmer John is interested in\nsolving a challenge that is even more interesting: Given a string $t$ of length\nat most $3\\cdot 10^5$ consisting only of characters a-z, compute the sum of\n$B(s)$ over all contiguous substrings $s$ of $t$.\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe input consists of a nonempty string of length at most $3\\cdot 10^5$ whose\ncharacters are all lowercase English letters.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nOutput a single number, the total number of bessies that can be made across all\nsubstrings of the input string.\n\nSAMPLE INPUT:\nbessiebessie\nSAMPLE OUTPUT: \n14\n\nTwelve substrings contain exactly 1 \"bessie\", and 1 string contains exactly 2\n\"bessie\"s, so the total is $12\\cdot 1 + 1 \\cdot 2 = 14$.\n\nSAMPLE INPUT:\nabcdefghssijebessie\nSAMPLE OUTPUT: \n28\n\nSCORING:\nInputs 3-5: The string has length at most 5000.Inputs 6-12: No\nadditional constraints.\n\n\nProblem credits: Brandon Wang and Benjamin Qi\n",
+        "constraints": [
+            300000
+        ]
+    },
+    {
+        "uniqueId": "usaco-621",
+        "name": "Circular Barn",
+        "difficulty": "Gold",
+        "tags": [
+            "Greedy & Implementation"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=621",
+        "text": "Being a fan of contemporary architecture, Farmer John has built a new barn in the\nshape of a perfect circle.  Inside, the barn consists of a ring of $n$ rooms, \nnumbered clockwise from $1 \\ldots n$ around the perimeter of the barn\n($3 \\leq n \\leq 100,000$).   Each room has doors to its two neighboring rooms,\nand also a door opening to the exterior of the barn.\n\nFarmer John owns $n$ cows, and he wants exactly one cow to end up in each room\nin the barn.  However, the cows, being slightly confused, line up at haphazard\ndoors, with possibly multiple cows lining up at the same door.  Precisely $c_i$\ncows line up outside the door to room $i$, so $\\sum c_i = n$.\n\nTo manage the process of herding the cows so that one cow ends up in each room,\nFarmer John wants to use the following approach: each cow enters at the door at\nwhich she initially lined up, then walks clockwise through the rooms until she\nreaches a suitable destination.  Given that a cow walking through $d$ doors\nconsumes $d^2$ energy, please determine the minimum amount of energy needed to\ndistribute the cows so one ends up in each room.  \n\nINPUT FORMAT (file cbarn.in):\nThe first line of input contains $n$.  Each of the remaining $n$ lines contain\n$c_1 \\ldots c_n$.\n\nOUTPUT FORMAT (file cbarn.out):\nPlease write out the minimum amount of energy consumed by the cows.  \n\nSAMPLE INPUT:\n10\n1\n0\n0\n2\n0\n0\n1\n2\n2\n2\nSAMPLE OUTPUT: \n33\n\nProblem credits: Brian Dean\n",
+        "constraints": [
+            100000
+        ]
+    },
+    {
+        "uniqueId": "usaco-837",
+        "name": "Out of Sorts",
+        "difficulty": "Gold",
+        "tags": [
+            "Search & Sort",
+            "Data Structures"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=837",
+        "text": "Keeping an eye on long term career possibilities beyond the farm, Bessie the cow\nhas started learning algorithms from various on-line coding websites.\n\nHer favorite algorithm thus far is \"bubble sort\".  Here is Bessie's initial\nimplementation, in cow-code, for sorting an array $A$ of length $N$.\n\n\nsorted = false\nwhile (not sorted):\n   sorted = true\n   moo\n   for i = 0 to N-2:\n      if A[i+1] < A[i]:\n         swap A[i], A[i+1]\n         sorted = false\n\nApparently, the \"moo\" command in cow-code does nothing more than print out\n\"moo\".  Strangely, Bessie seems to insist on including it at various points in\nher code.\n\nAfter testing her code on several arrays, Bessie learns an interesting\nobservation: while large  elements can be pulled to the end of the array very\nquickly, it can take small elements a very long time to \"bubble\" to the front of\nthe array (she suspects this is how the algorithm gets its name).  In order to\ntry and alleviate this problem, Bessie tries to modify her code so that it scans\nforward and then backward in each iteration of the main loop, so that both large\nand small elements have a chance to be pulled long distances in each iteration\nof the main loop.  Her code now looks like this:\n\n\nsorted = false\nwhile (not sorted):\n   sorted = true\n   moo\n   for i = 0 to N-2:\n      if A[i+1] < A[i]:\n         swap A[i], A[i+1]\n   for i = N-2 downto 0:\n      if A[i+1] < A[i]:\n         swap A[i], A[i+1]\n   for i = 0 to N-2:\n      if A[i+1] < A[i]:\n         sorted = false\n\nGiven an input array, please predict how many times \"moo\" will be printed by\nBessie's modified code.\n\nINPUT FORMAT (file sort.in):\nThe first line of input contains $N$ ($1 \\leq N \\leq 100,000$).  The next $N$\nlines  describe $A[0] \\ldots A[N-1]$, each being an integer in the range\n$0 \\ldots 10^9$. Input elements are not guaranteed to be distinct.\n\nOUTPUT FORMAT (file sort.out):\nPrint the number of times \"moo\" is printed.\n\nSAMPLE INPUT:\n5\n1\n8\n5\n3\n2\nSAMPLE OUTPUT: \n2\n\n\nProblem credits: Brian Dean\n",
+        "constraints": [
+            100000
+        ]
+    },
+    {
+        "uniqueId": "usaco-947",
+        "name": "Balancing Inversions",
+        "difficulty": "Gold",
+        "tags": [
+            "Two Pointers & Sliding Window",
+            "Greedy & Implementation"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=947",
+        "text": "Bessie and Elsie were playing a game on a boolean array $A$ of length $2N$\n($1 \\leq N \\leq 10^5$). Bessie's score was the number of inversions in the first\nhalf of $A$, and Elsie's score was the number of inversions in the second half\nof $A$.  An inversion is a pair of entries $A[i]=1$ and $A[j]=0$ where $i<j$. \nFor example, an array consisting of a block of 0s followed by a block of 1s has\nno inversions, and an array consisting of a block of $X$ 1s  follows by a block\nof $Y$ 0s has $XY$ inversions.\n\nFarmer John has stumbled upon the game board and is curious to know the minimum\nnumber of swaps between adjacent elements needed so that the game looks like it\nwas a tie. Please help out Farmer John figure out the answer to this question.\n\nINPUT FORMAT (file balance.in):\nThe first line of input contains $N$, and the next line contains $2N$ integers\nthat are either zero or one.\n\nOUTPUT FORMAT (file balance.out):\nPlease write the number of adjacent swaps needed to make the game tied.\n\nSAMPLE INPUT:\n5\n0 0 0 1 0 1 0 0 0 1\nSAMPLE OUTPUT: \n1\n\nIn this example, the first half of the array initially has $1$ inversion, and\nthe second half has $3$ inversions. After swapping the $5$th and $6$th bits with\neach other, both subarrays have $0$ inversions.\n\n\nProblem credits: Dhruv Rohatgi\n",
+        "constraints": [
+            100000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1067",
+        "name": "Square Pasture",
+        "difficulty": "Gold",
+        "tags": [
+            "Geometry",
+            "Search & Sort"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1067",
+        "text": "Farmer John's largest pasture can be regarded as a large 2D grid of square\n\"cells\" (picture a huge chess board).  Currently, there are $N$ cows occupying\nsome of these cells ($1 \\leq N \\leq 200$).  \n\nFarmer John wants to build a fence that will enclose a square region of cells;\nthe square must be oriented so its sides are parallel with the $x$  and $y$\naxes, and it could be as small as a single cell.  Please help him count the\nnumber of distinct subsets of cows that he can enclose in such a region.  Note\nthat the empty subset should be counted as one of these.\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe first line contains a single integer $N$.  Each of the next $N$ lines Each\nof the next $N$ lines contains two space-separated integers,  indicating the\n$(x,y)$ coordinates of a cow's cell.  All $x$ coordinates are distinct from\neach-other, and all $y$ coordinates are distinct from each-other.  All $x$ and\n$y$ values lie in the range $0 \\ldots 10^9$.\n\nNote that although the coordinates of cells with cows are nonnegative, the \nsquare fenced area might possibly extend into cells with negative coordinates.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nThe number of subsets of cows that FJ can fence off. It can be shown that this\nquantity fits within a signed 32-bit integer.\n\nSAMPLE INPUT:\n4\n0 2\n2 3\n3 1\n1 0\nSAMPLE OUTPUT: \n14\n\nIn this example, there are $2^4$ subsets in total. FJ cannot create a fence enclosing only cows 1\nand 3, or only cows 2 and 4, so the answer is $2^4-2=16-2=14$.\n\nSAMPLE INPUT:\n16\n17 4\n16 13\n0 15\n1 19\n7 11\n3 17\n6 16\n18 9\n15 6\n11 7\n10 8\n2 1\n12 0\n5 18\n14 5\n13 2\nSAMPLE OUTPUT: \n420\n\nSCORING:\nIn test cases 1-5, all coordinates of cells containing cows are less than\n$20$.In test cases 6-10, $N\\le 20$.In test cases 11-20, there are no additional constraints.\n\n\nProblem credits: Benjamin Qi\n",
+        "constraints": [
+            200
+        ]
+    },
+    {
+        "uniqueId": "usaco-1163",
+        "name": "Bracelet Crossings",
+        "difficulty": "Gold",
+        "tags": [
+            "Geometry",
+            "Bit Manipulation"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1163",
+        "text": "Bessie the cow enjoys arts and crafts.  In her free time, she has made $N$\n($1\\le N\\le 50$) bracelets, conveniently numbered $1 \\ldots N$.  The $i$th\nbracelet is painted color $i$ out of a set of $N$ different colors.  After\nconstructing the bracelets, Bessie  placed them on a table for display (which we\ncan think of as the 2D plane). She was careful to arrange the bracelets to\nsatisfy the following three conditions:\n\nEvery bracelet was a single closed polygonal chain -- a series of vertices\n(points) connected sequentially by line segments, where the first and last\npoints are the same (Feel welcome to consult the wikipedia page for\nmore detail: polygonal chain),\nNo bracelet intersected itself (this corresponds to a \"simple\" polygonal\nchain); andNo two bracelets intersected.\nUnfortunately, right after Bessie arranged the bracelets in such a careful\nmanner, Farmer John drove by in his tractor, shaking the table and causing the\nbracelets to shift around and possibly break into multiple (not necessarily\nclosed or simple) polygonal chains! Afterward, Bessie wanted to check whether\nthe three conditions above still held. However, it was dark, so she couldn't see\nthe bracelets anymore. \n\nFortunately, Bessie had a flashlight. She chose $M$ ($1\\le M\\le 50$) vertical\nlines $x=1, x=2, \\ldots, x=M$ and for each line, she swept the beam of the\nflashlight along that line from $y=-\\infty$ to $y=\\infty$, recording the colors\nof all bracelets she saw in the order they appeared. Luckily, no beam crossed\nover any vertex of any polygonal chain or two line segments at the same time.\nFurthermore, for each beam, every color that appeared appeared exactly twice.\n\nCan you help Bessie use this information to determine whether it is possible\nthat the bracelets still satisfy all three of the conditions above? \n\nINPUT FORMAT (input arrives from the terminal / stdin):\nEach input case contains $T$ sub-cases ($1 \\leq T \\leq 50$) that must all solved\nindependently to solve the full input case. Consecutive test cases are \nseparated by newlines.\n\nThe first line of the input contains $T$.  Each of the $T$ sub-test cases then\nfollow.  \n\nThe first line of each sub-test case contains two integers $N$ and $M$. Each\nsub-test case then contains $M$ additional lines. For each $i$ from $1$ to $M$,\nthe $i$-th additional line contains an integer $k_i$ ($0\\le k_i\\le 2N$, $k_i$\neven), followed by $k_i$ integers $c_{i1}, c_{i2},\\ldots, c_{ik_i}$\n($c_{ij}\\in [1,N]$, every $c_{ij}$ appears zero or two times). This means that\nwhen Bessie swept her flashlight from $(i,-\\infty)$ to $(i,\\infty)$, she\nencountered the colors $c_{i1}, c_{i2},\\ldots, c_{ik_i}$ in that order.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nFor each sub-test case, print YES if it is possible for the three conditions\nabove to be satisfied. Otherwise, print NO. \n\nSAMPLE INPUT:\n5\n\n1 2\n2 1 1\n2 1 1\n\n1 3\n2 1 1\n0\n2 1 1\n\n2 1\n4 1 2 1 2\n\n4 2\n6 1 2 2 3 3 1\n6 1 2 4 4 2 1\n\n2 2\n4 1 1 2 2\n4 2 2 1 1\nSAMPLE OUTPUT: \nYES\nNO\nNO\nYES\nNO\n\nAn example of a feasible bracelet configuration for the first sub-case is:\n\n\nFor the fourth sub-case, a feasible arrangement is the following:\n\n\nSCORING:\nTest case 2 satisfies $N = 1$.Test cases 3-5 satisfy $N=2$.Test cases 6-8 satisfy $M=1$.Test cases 9-14 satisfy $M=2$.Test cases 15-20 satisfy no additional constraints.\n\n\nProblem credits: Richard Qi\n",
+        "constraints": [
+            50,
+            50,
+            50
+        ]
+    },
+    {
+        "uniqueId": "usaco-649",
+        "name": "Bull in a China Shop",
+        "difficulty": "Platinum",
+        "tags": [
+            "Strings",
+            "Search & Sort",
+            "Math & Combinatorics"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=649",
+        "text": "Farmer John has decided his home needs more decoration.  Visiting the local\nchina shop, he finds a delicate glass cow figurine that he decides to purchase,\nknowing that it will fit perfectly on the mantel above his fireplace.\n\nThe shape of the cow figurine is described by an $N \\times M$ grid of characters\nlike the one below ($3 \\leq N, M \\leq 500$), where lowercase letter characters\nare each part of the figurine (indicating different colors) and '.' characters\nare not.\n\n\n...............\n...............\nx..x...........\nxxxx...........\nxxxxaaaaaaa...\n.xx.aaaaaaaaa..\n....aaaaaaa.aa.\n....ll...ll....\n....vv...vv....\n...............\n\nUnfortunately, right before FJ can make his purchase, a bull runs through the\nshop  and breaks not only FJ's figurine, but many of the other glass objects on\nthe shelves as well!  FJ's figurine breaks into 3 pieces, which quickly become\nlost  among $K$ total pieces lying on the ground ($4 \\leq K \\leq 100$).  Each of\nthe $K$ pieces is described by a grid of characters, just like the original\nfigurine.\n\nPlease help FJ determine how many sets of 3 pieces (out of the $K$ on the floor)\ncould be glued back together to mend his broken figurine.  \n\nThe pieces on the ground might have been flipped vertically or horizontally, or\nrotated by some multiple of 90 degrees. Therefore, given the original grid as\nwell as $K$ grids describing pieces, you want to find sets of 3 pieces that can\nbe joined together to form the original picture, allowing the pieces to be\ntranslated, flipped, or rotated multiples of 90 degrees.  When then\nsuperimposed, the 3 pieces should exactly form the original picture, with each\ncolored square in the original picture represented in exactly one of the pieces.\n\nINPUT FORMAT (file bcs.in):\nThe first line contains a single integer $K$. Following that will be $K + 1$\npiece descriptions.  The first description will describe the original glass cow,\nthe following $K$ descriptions will be of the broken pieces.\n\nEach description begins with a line containing two integers $R$ and $C$\n($1 \\le R, C \\le 100$).  The following $R$ lines contain $C$ lowercase alphabet\ncharacters describing the color of each cell.  Each piece will be\nhorizontally/vertically connected and have at least one non-empty cell.\n\nOUTPUT FORMAT (file bcs.out):\nOutput the number of triples $i, j, k$ ($i < j < k$) such that pieces $i$, $j$,\nand $k$ can be arranged to form the original glass cow.\n\nSAMPLE INPUT:\n5\n5 5\naaaaa\n..a..\nbbabb\n..a..\naaaaa\n3 5\n..abb\n..a..\naaaaa\n5 2\na.\na.\naa\na.\na.\n1 2\nbb\n1 5\nbbabb\n2 5\naaaaa\n..a..\nSAMPLE OUTPUT: \n3\n\nThe three solutions use pieces $(0, 1, 2)$, $(0, 2, 4)$, $(1, 3, 4)$.\n\nNote that this problem has a time limit of 6 seconds per test case (and twice that for Java and Python submissions).\n\n\nProblem credits: Brian Dean\n",
+        "constraints": [
+            500,
+            100,
+            100
+        ]
+    },
+    {
+        "uniqueId": "usaco-745",
+        "name": "Switch Grass",
+        "difficulty": "Platinum",
+        "tags": [
+            "Graphs & Trees"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=745",
+        "text": "Farmer John has recently been experimenting with cultivating different types of\ngrass on his farm, realizing that different types of cows like different types\nof grass.  However, he must be careful to ensure that different types of grass\nare planted sufficiently far away from each-other, in order to prevent them from\nbeing inextricably mixed.\n\nFJ's farm consists of $N$ fields ($1 \\leq N \\leq 200,000$), where $M$ pairs of \nfields are connected by bi-directional pathways ($1 \\leq M \\leq 200,000$). \nUsing these pathways, it is possible to walk from any field to any other field. \nEach pathway has an integer length in the range $1 \\ldots 1,000,000$.  Any pair\nof fields will be linked by at most one direct pathway.\n\nIn each field, FJ initially plants one of $K$ types of grass\n($1 \\leq K \\leq N$). Over time, however, he might decide to switch the grass in\nsome field to a different type.  He calls this an \"update\" operation.  He might\nperform several updates over the course of time, which are all cumulative in\nnature.\n\nAfter each update, FJ would like to know the length of the shortest path between\ntwo fields having different grass types.  That is, among all pairs of fields\nhaving different grass types, he wants to know which two are closest.  Ideally,\nthis number is large, so he can prevent grass of one type from mixing with grass\nof another type.  It is guaranteed that the farm will always have at least two\nfields with different grass types.\n\nIn 30 percent of the input cases, each field will be directly connected to at most\n10 pathways.\n\nINPUT FORMAT (file grass.in):\nThe first line of input contains four integers, $N$, $M$, $K$, and $Q$, where\n$Q$ is the number of updates ($1 \\leq Q \\leq 200,000$). The next $M$ lines\ndescribe the paths; each one contains three integers $A$, $B$, and $L$,\nindicating a path from field $A$ to field $B$ (both integers in the range\n$1 \\ldots N$) of length $L$.  The next line indicates the initial type of\ngrass growing in each field ($N$ integers in the range $1 \\ldots K$).  Finally, the\nlast $Q$ lines each describe an update, specified by two integers $A$ and $B$,\nwhere the grass in field $A$ is to be updated to type $B$.\n\nOUTPUT FORMAT (file grass.out):\nFor each update, print the length of the shortest path between two fields with\ndifferent types of grass, after the update is applied.\n\nSAMPLE INPUT:\n3 2 3 4\n1 2 3\n2 3 1\n1 1 2\n3 3\n2 3\n1 2\n2 2\nSAMPLE OUTPUT: \n1\n3\n3\n1\n\n\nProblem credits: Lewin Gan\n",
+        "constraints": [
+            200000,
+            200000,
+            200000
+        ]
+    },
+    {
+        "uniqueId": "usaco-818",
+        "name": "Cow Gymnasts",
+        "difficulty": "Platinum",
+        "tags": [
+            "Math & Combinatorics"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=818",
+        "text": "Bored of farm life, the cows have sold all their earthly possessions and joined\nthe crew of a traveling circus. So far, the cows had been given easy acts:\njuggling torches, walking tightropes, riding unicycles -- nothing a handy-hoofed\ncow couldn't handle.  However, the ringmaster wants to create a much more\ndramatic  act for their next show.\n\nThe stage layout for the new act involves $N$ platforms arranged in a circle. \nOn each platform, between $1$ and $N$ cows must form a stack, cow upon cow upon\ncow. When the ringmaster gives the signal, all stacks must simultaneously fall\nclockwise, so that the bottom cow in a stack doesn't move, the cow above her\nmoves one platform clockwise, the next cow moves two platforms clockwise, and so\nforth.  Being accomplished gymnasts, the cows know they will have no trouble\nwith the technical aspect of this act. The various stacks of cows will not\n\"interfere\" with each other as they fall, so every cow will land on the intended\nplatform. All of the cows landing on a platform form a new stack, which does not\nfall over.\n\nThe ringmaster thinks the act will be particularly dramatic if after the stacks\nfall, the new stack on each platform contains the same number of cows as the\noriginal stack on that platform.  We call a configuration of stack sizes\n\"magical\" if it satisfies this condition.  Please help the cows by computing the\nnumber of magical configurations. Since this number may be very large, compute\nits remainder modulo $10^9 + 7$.\n\nTwo configurations are considered distinct if there is any platform for which\nthe configurations assign a different number of cows. \n\nINPUT FORMAT (file gymnasts.in):\nThe input is a single integer, $N$ ($1 \\leq N \\leq 10^{12}$).\n\nOUTPUT FORMAT (file gymnasts.out):\nA single integer giving the number of magical configurations modulo $10^9 + 7$.\n\nSAMPLE INPUT:\n4\nSAMPLE OUTPUT: \n6\n\nFor $N = 4$, the valid configurations are $(1,1,1,1)$, $(2,2,2,2)$, $(3,3,3,3)$,\n$(4,4,4,4)$, $(2,3,2,3)$, and $(3,2,3,2)$.\n\nProblem credits: Dhruv Rohatgi\n",
+        "constraints": [
+            1000000000000
+        ]
+    },
+    {
+        "uniqueId": "usaco-840",
+        "name": "Out of Sorts",
+        "difficulty": "Platinum",
+        "tags": [
+            "Search & Sort",
+            "Data Structures"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=840",
+        "text": "Keeping an eye on long term career possibilities beyond the farm, Bessie the cow\nhas started learning algorithms from various on-line coding websites.  Her\nfavorite two algorithms are \"bubble sort\" and \"quicksort\", but Bessie\nunfortunately gets the  two easily confused and ends up implementing a somewhat\nodd hybrid of them both!\n\nLet us call a position between elements $i$ and $i+1$ in an array $A$ a \n\"partition point\" if the maximum of $A[...i]$ is no larger than the  minimum in\n$A[i+1 \\ldots]$.  Bessie remembers that quicksort involves rearranging an array\nso it has a partition point and then recursively sorting the two sides $A[...i]$\nand $A[i+1 \\ldots]$.  However, even though she notes, correctly, that all\npartition points in an array can be  determined in linear time, she has\nforgotten how quicksort was supposed to rearrange the array to quickly create a\npartition point!   In what may prove to be the worst algorithmic blunder in the\nhistory of sorting algorithms, she makes the unfortunate decision to use bubble\nsort for this task.\n\nHere is an outline of Bessie's initial implementation for sorting an array $A$. \nShe first writes a simple function that makes one pass of bubble sort:\n\n\nbubble_sort_pass (A) {\n   for i = 0 to length(A)-2\n      if A[i] > A[i+1], swap A[i] and A[i+1]\n}\n\nThe recursive code for her quick(ish) sort function is then structured as\nfollows:\n\n\nquickish_sort (A) {\n   if length(A) = 1, return\n   do { // Main loop\n      work_counter = work_counter + length(A)\n      bubble_sort_pass(A)\n   } while (no partition points exist in A) \n   divide A at all partition points; recursively quickish_sort each piece\n}\n\nBessie is curious how fast her code will run.  For simplicity, she figures each\niteration of her main loop takes linear time, so she increments a global\nvariable called work_counter inside the loop accordingly, so as to keep track of\nthe total work done by the algorithm.\n\nGiven an input array, please predict the final value of work_counter after the \narray is subject to a quickish_sort.\n\nINPUT FORMAT (file sort.in):\nThe first line of input contains $N$ ($1 \\leq N \\leq 100,000$).  The next $N$\nlines  describe $A[0] \\ldots A[N-1]$, each being an integer in the range\n$0 \\ldots 10^9$. Input elements are not guaranteed to be distinct.\n\nOUTPUT FORMAT (file sort.out):\nPrint the final value of work_counter.\n\nSAMPLE INPUT:\n7\n20\n2\n3\n4\n9\n8\n7\nSAMPLE OUTPUT: \n12\n\nIn this example, we start with the array 20 2 3 4 9 8 7.  After one pass of\nbubble sort (adding 7 to the work counter), we get 2 | 3 | 4 | 9 8 7 | 20, where |\ndenotes a  partition point.  Our problem is therefore divided into recursive\nsubproblems involving sorting 2, 3, 4, and 20 (each taking zero\nunits of work), and 9 8 7.  For the 9 8 7 subproblem, one pass of the main loop\n(3 units of work) yields 8 7 | 9, after which a final pass over 8 7 (2 units of\nwork) effectively finishes the sort.\n\n\nProblem credits: Brian Dean\n",
+        "constraints": [
+            100000
+        ]
+    },
+    {
+        "uniqueId": "usaco-902",
+        "name": "Train Tracking 2",
+        "difficulty": "Platinum",
+        "tags": [
+            "Dynamic Programming",
+            "Math & Combinatorics",
+            "Two Pointers & Sliding Window"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=902",
+        "text": "Every day the express train goes past the farm. It has $N$ carriages\n($1 \\leq N \\leq 10^5$), each with a positive integer label between $1$ and\n$10^9$; different carriages may have the same label.\n\nUsually, Bessie watches the train go by, tracking the carriage labels. But today\nis too foggy, and Bessie can't see any of the labels! Luckily, she has acquired\nthe sliding window minimums of the sequence of carriage labels, from a reputable\nsource in the city. In particular, she has a positive integer $K$, and $N-K+1$\npositive integers $c_1,\\dots,c_{N+1-K}$, where $c_i$ is the minimum label among\ncarriages $i, i+1, \\dots, i+K-1$.\n\nHelp Bessie figure out the number of ways to assign a label to each carriage,\nconsistent with the sliding window minimums. Since this number may be very\nlarge, Bessie will be satisfied if you find its remainder modulo $10^9 + 7$.\n\nBessie's information is completely reliable; that is, it is guaranteed that\nthere is at least one consistent way to assign labels.\n\nINPUT FORMAT (file tracking2.in):\nThe first line consists of two space-separated integers, $N$ and $K$. The\nsubsequent lines contain the sliding window minimums $c_1,\\dots,c_{N+1-K}$, one\nper line.\n\nOUTPUT FORMAT (file tracking2.out):\nA single integer: the number of ways, modulo $10^9 + 7$, to assign a positive\ninteger not exceeding $10^9$ to each carriage, such that the minimum label among\ncarriages $i, i+1, \\dots, i+K-1$ is $c_i$ for each $1 \\leq i \\leq N-K+1$.\n\nSAMPLE INPUT:\n4 2\n999999998\n999999999\n999999998\nSAMPLE OUTPUT: \n3\n\n\nProblem credits: Dhruv Rohatgi\n",
+        "constraints": [
+            100000
+        ]
+    },
+    {
+        "uniqueId": "usaco-924",
+        "name": "Cow Dating",
+        "difficulty": "Platinum",
+        "tags": [
+            "Math & Combinatorics",
+            "Two Pointers & Sliding Window"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=924",
+        "text": "Not impressed by the lackluster dating websites currently available to cows\n(e.g., eHarmoony, Moosk, Plenty of Cows), Farmer John decides to launch a new\ncow dating site based on a fancy proprietary matching algorithm that matches\ncows and bulls according to a wide range of their mutual interests.\n\nBessie, in searching for a partner to the Valentine\u2019s Day Barn Dance, has\ndecided to try out this site. After making her account, FJ\u2019s algorithm has\ngiven her a list of $N$ possible matches ($1\\leq N \\leq 10^6$). Going through\nthe list, Bessie concludes that each bull has probability $p_i$ ($0<p_i<1$) of\naccepting an invitation from her for the dance. \n\nBessie decides to send an invitation to each bull in a contiguous interval of\nthe list. Virtuous as always, she wants exactly one partner. Please help Bessie\nfind the maximum probability of receiving exactly one accepted invitation, if\nshe chooses the right interval.\n\nINPUT FORMAT (file cowdate.in):\nThe first line of input contains $N$ ($1 \\leq N \\leq 10^6$). Each of the\nremaining $N$ lines contain $10^6$ times $p_i$, which is an integer.\n\nIn at least 25% of the test cases, it is further guaranteed that $N \\leq 4000$.\n\nOUTPUT FORMAT (file cowdate.out):\nPrint $10^6$ times the maximum probability of receiving exactly one accepted\ninvitation, rounded down to the nearest integer.\n\nSAMPLE INPUT:\n3\n300000\n400000\n350000\nSAMPLE OUTPUT: \n470000\n\nThe maximal probability results from selecting the interval from the 2nd to the\n3rd cow.\n\nAs a note, you should be somewhat careful with floating point precision when\nsolving this problem. We advise using at least \"doubles\" (64-bit floating-point\nnumbers) and not \"floats\" (32-bit floating point numbers).\n\n\nProblem credits: Ethan Guo\n",
+        "constraints": [
+            1000000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1070",
+        "name": "Cowmistry",
+        "difficulty": "Platinum",
+        "tags": [
+            "Bit Manipulation",
+            "Dynamic Programming",
+            "Math & Combinatorics"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1070",
+        "text": "Bessie has been procrastinating on her cow-mistry homework and now needs your\nhelp! She needs to create a mixture of three different cow-michals. As all good\ncows know though, some cow-michals cannot be mixed with each other or else they\nwill cause an explosion. In particular, two cow-michals with labels $a$ and $b$\ncan only be present in the same mixture if $a \\oplus b \\le K$\n($1 \\le K \\le 10^9$).\n\nNOTE: Here, $a\\oplus b$ denotes the \"bitwise exclusive or'' of non-negative\nintegers $a$ and $b$. This operation is equivalent to adding each corresponding\npair of bits in base 2 and discarding the carry. For example, \n$$0\\oplus 0=1\\oplus 1=0,$$\n$$1\\oplus 0=0\\oplus 1=1,$$\n$$5\\oplus 7=101_2\\oplus 111_2=010_2=2.$$\nBessie has $N$ ($1\\le N\\le 2\\cdot 10^4$) boxes of cow-michals and the $i$-th box contains cow-michals\nlabeled $l_i$ through $r_i$ inclusive $(0\\le l_i \\le r_i \\le 10^9)$. No two\nboxes have any cow-michals in common. She wants to know how many unique mixtures\nof three different cow-michals she can create. Two mixtures are considered\ndifferent if there is at least one cow-michal present in one but not the other.\nSince the answer may be very large, report it modulo $10^9 + 7$.\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe first line contains two integers $N$ and $K$.\n\nEach of the next $N$ lines contains two space-separated integers $l_i$ and\n$r_i$. It is guaranteed that the boxes of cow-michals are provided in increasing\norder of their contents; namely, $r_i<l_{i+1}$ for each $1\\le i<N$.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nThe number of mixtures of three different cow-michals Bessie can create, modulo\n$10^9 + 7$.\n\nSAMPLE INPUT:\n1 13\n0 199\nSAMPLE OUTPUT: \n4280\n\nWe can split the chemicals into 13 groups that cannot cross-mix: $(0\\ldots 15)$,\n$(16\\ldots 31)$,  $\\ldots$ $(192\\ldots 199)$. Each of the first twelve groups\ncontributes $352$ unique mixtures and the last contributes $56$ (since all\n$\\binom{8}{3}$ combinations of three different cow-michals from\n$(192\\ldots 199)$ are okay), for a total of\n$352\\cdot 12+56=4280$.\n\nSAMPLE INPUT:\n6 147\n1 35\n48 103\n125 127\n154 190\n195 235\n240 250\nSAMPLE OUTPUT: \n267188\n\nSCORING\nTest cases 3-4 satisfy $\\max(K,r_N)\\le 10^4$. Test cases 5-6 satisfy $K=2^k-1$ for some integer $k\\ge 1$.Test cases 7-11 satisfy $\\max(K,r_N)\\le 10^6$.Test cases 12-16 satisfy $N\\le 20$.Test cases 17-21 satisfy no additional constraints.\n\n\nProblem credits: Benjamin Qi\n",
+        "constraints": [
+            20000,
+            1000000000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1236",
+        "name": "262144 Revisited",
+        "difficulty": "Platinum",
+        "tags": [
+            "Dynamic Programming",
+            "Math & Combinatorics"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1236",
+        "text": "Bessie likes downloading games to play on her cell phone, even though she does\nfind the small touch screen rather cumbersome to use with her large hooves.\n\nShe is particularly intrigued by the current game she is playing. The game\nstarts with a sequence of $N$ positive integers $a_1,a_2,\\ldots,a_N$\n($2\\le N\\le 262,144$),  each in the range $1\\ldots 10^6$. In one move, Bessie\ncan take two adjacent numbers  and replace them with a single number equal to one\ngreater than the maximum of the two (e.g., she  might replace an adjacent pair\n$(5,7)$ with an $8$). The game ends after $N-1$  moves, at which point only a\nsingle number remains. The goal is to minimize this final number.\n\nBessie knows that this game is too easy for you. So your job is not just to play\nthe game optimally on $a$, but for every contiguous subsequence of $a$. \n\nOutput the sum of the minimum possible final numbers over all $\\frac{N(N+1)}{2}$\ncontiguous subsequences of $a$.\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nFirst line contains $N$.\n\nThe next line contains $N$ space-separated integers denoting the input sequence.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nA single line containing the sum.\n\nSAMPLE INPUT:\n6\n1 3 1 2 1 10\nSAMPLE OUTPUT: \n115\n\nThere are $\\frac{6\\cdot 7}{2}=21$ contiguous subsequences in total. For example,\nthe minimum possible final number for the contiguous subsequence $[1,3,1,2,1]$\nis $5$, which can be obtained via the following sequence of operations:\n\n\noriginal    -> [1,3,1,2,1]\ncombine 1&3 -> [4,1,2,1]\ncombine 2&1 -> [4,1,3]\ncombine 1&3 -> [4,4]\ncombine 4&4 -> [5]\n\nHere are the minimum possible final numbers for each contiguous subsequence:\n\n\nfinal(1:1) = 1\nfinal(1:2) = 4\nfinal(1:3) = 5\nfinal(1:4) = 5\nfinal(1:5) = 5\nfinal(1:6) = 11\nfinal(2:2) = 3\nfinal(2:3) = 4\nfinal(2:4) = 4\nfinal(2:5) = 5\nfinal(2:6) = 11\nfinal(3:3) = 1\nfinal(3:4) = 3\nfinal(3:5) = 4\nfinal(3:6) = 11\nfinal(4:4) = 2\nfinal(4:5) = 3\nfinal(4:6) = 11\nfinal(5:5) = 1\nfinal(5:6) = 11\nfinal(6:6) = 10\n\nSCORING:\nTest cases 2-3 satisfy $N\\le 300$.Test cases 4-5 satisfy $N\\le 3000$.In test cases 6-8, all values are at most $40$.In test cases 9-11, the input sequence is non-decreasing.Test cases 12-23 satisfy no additional constraints.\n\n\nProblem credits: Benjamin Qi\n",
+        "constraints": [
+            262144,
+            1000000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1237",
+        "name": "Hoof and Brain",
+        "difficulty": "Platinum",
+        "tags": [
+            "Graphs & Trees",
+            "Data Structures"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1237",
+        "text": "Given a directed graph with $N$ vertices and $M$ edges ($2 \\leq N \\leq 10^5$,\n$1 \\leq M \\leq 2 \\cdot 10^5$), Farmer John's cows like to play the following\ngame with two players.\n\nPlace two tokens on distinct nodes in\nthe graph. Each turn, one player, the brain, will choose a token that must be\nmoved along an outgoing edge. The other player, the hoof, will choose which edge\nto move the token along. The two tokens can never be on the same node. If at\nsome point the hoof can't make a valid move, the brain wins. If the game\ncontinues indefinitely, the hoof wins.\n\nYou are given $Q$ queries ($1 \\leq Q \\leq 10^5$) indicating the starting nodes\nof the two tokens. For each query, output which player will win.\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe first line contains $N$ and $M$.\n\nThe next $M$ lines each contain two integers $a$ and $b$, denoting an edge from\n$a$ to $b$.\n\nThe graph does not contain self-loops or multiple edges.\n\nThe next line contains $Q$.\n\nThe final $Q$ lines each contain two integers $x$ and $y$ satisfying\n$1\\le x,y\\le N$ and $x\\neq y$, indicating the starting nodes of the tokens.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nA string of length $Q$, where each character is B for the brain winning and H\nfor the hoof winning.\n\n**Note: the time limit for this problem is 4s, twice the default.**\nSAMPLE INPUT:\n9 10\n1 2\n2 3\n3 4\n4 7\n3 5\n1 6\n6 8\n8 9\n9 6\n7 2\n4\n1 5\n1 2\n1 6\n2 4\nSAMPLE OUTPUT: \nBHHB\n\nThe brain can win the first game by selecting node 5; then the hoof has no valid\nmove.\n\nThe brain can win the last game by selecting node 4 and then node 7; then the\nhoof has no valid move.\n\nThe hoof wins the other games.\n\nSCORING:\nTest cases 2-3 satisfy $N\\le 100$, $M\\le 200$.Test cases 4-9 satisfy $N\\le 5000$.Test cases 10-21 satisfy no additional constraints.\n\n\nProblem credits: Danny Mittal\n",
+        "constraints": [
+            100000,
+            100000,
+            100000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1238",
+        "name": "Up Down Subsequence",
+        "difficulty": "Platinum",
+        "tags": [
+            "Dynamic Programming",
+            "Data Structures"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1238",
+        "text": "Farmer John's $N$ cows ($2 \\leq N \\leq 3\\cdot 10^5$), conveniently numbered $1 \\ldots N$ as usual, have ordered themselves according to a  permutation\n$p_1,p_2,\\ldots,p_N$ of $1\\ldots N$.  You are also\ngiven a string of length $N-1$ consisting of the letters U and D. Please find the\nmaximum $K\\le N-1$ such that there  exists a subsequence $a_0,a_1,\\ldots,a_{K}$\nof $p$ such that for all $1\\le j\\le K$, $a_{j - 1} < a_j$ if the $j$th letter in\nthe string is U, and $a_{j - 1} > a_j$ if the $j$th letter in the string is D.\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe first line contains $N$.\n\nThe second line contains $p_1,p_2,\\ldots,p_N$.\n\nThe last line contains the string.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nWrite out maximum possible value of $K$.\n\nSAMPLE INPUT:\n5\n1 5 3 4 2\nUDUD\nSAMPLE OUTPUT: \n4\n\nWe can choose $[a_0,a_1,a_2,a_3,a_4]=[p_1,p_2,p_3,p_4,p_5]$; the entire\npermutation is consistent with the string.\n\nSAMPLE INPUT:\n5\n1 5 3 4 2\nUUDD\nSAMPLE OUTPUT: \n3\n\nWe can choose $[a_0,a_1,a_2,a_3]=[p_1,p_3,p_4,p_5]$.\n\nSCORING:\nTest cases 3-4 satisfy $N\\le 500$.Test cases 5-8 satisfy $N\\le 5000$.In test cases 9-12, the string consists of Us followed by Ds. Test cases 13-22 satisfy no additional constraints.\n\n\nProblem credits: Danny Mittal\n",
+        "constraints": [
+            300000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1333",
+        "name": "Good Bitstrings",
+        "difficulty": "Platinum",
+        "tags": [
+            "Bit Manipulation",
+            "Math & Combinatorics"
+        ],
+        "url": "http://usaco.org/index.php?page=viewproblem2&cpid=1333",
+        "text": "\nFor any two positive integers $a$ and $b$, define the function\n$\\texttt{gen_string}(a,b)$ by the following Python code:\n\n\ndef gen_string(a: int, b: int):\n\tres = \"\"\n\tia, ib = 0, 0\n\twhile ia + ib < a + b:\n\t\tif ia * b <= ib * a:\n\t\t\tres += '0'\n\t\t\tia += 1\n\t\telse:\n\t\t\tres += '1'\n\t\t\tib += 1\n\treturn res\n\nEquivalent C++ code:\n\n\nstring gen_string(int64_t a, int64_t b) {\n\tstring res;\n\tint ia = 0, ib = 0;\n\twhile (ia + ib < a + b) {\n\t\tif ((__int128)ia * b <= (__int128)ib * a) {\n\t\t\tres += '0';\n\t\t\tia++;\n\t\t} else {\n\t\t\tres += '1';\n\t\t\tib++;\n\t\t}\n\t}\n\treturn res;\n}\n\n$ia$ will equal $a$ and $ib$ will equal $b$ when the loop terminates, so this\nfunction returns a  bitstring of length $a+b$ with exactly $a$ zeroes and $b$\nones. For example, $\\texttt{gen_string}(4,10)=01110110111011$.\n\nCall a bitstring $s$ $\\textbf{good}$ if there exist positive integers $x$ and\n$y$  such that $s=\\texttt{gen_string}(x,y)$. Given two positive integers $A$ and\n$B$  ($1\\le A,B\\le 10^{18}$), your job is to compute the number of good prefixes\nof  $\\texttt{gen_string}(A,B)$. For example, there are $6$ good prefixes of \n$\\texttt{gen_string}(4,10)$:\n\n\nx = 1 | y = 1 | gen_string(x, y) = 01\nx = 1 | y = 2 | gen_string(x, y) = 011\nx = 1 | y = 3 | gen_string(x, y) = 0111\nx = 2 | y = 5 | gen_string(x, y) = 0111011\nx = 3 | y = 7 | gen_string(x, y) = 0111011011\nx = 4 | y = 10 | gen_string(x, y) = 01110110111011\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe first line contains $T$ ($1\\le T\\le 10$), the number of independent test\ncases.\n\nEach of the next $T$ lines contains two integers $A$ and $B$.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nThe answer for each test case on a new line.\n\nSAMPLE INPUT:\n6\n1 1\n3 5\n4 7\n8 20\n4 10\n27 21\nSAMPLE OUTPUT: \n1\n5\n7\n10\n6\n13\n\nSCORING:\nInput 2: $A,B\\le 100$Input 3: $A,B\\le 1000$Inputs 4-7: $A,B\\le 10^6$Inputs 8-13: All answers are at most $10^5$.Inputs 14-21: No additional constraints.\n\n\nProblem credits: Benjamin Qi\n",
+        "constraints": [
+            10
+        ]
+    },
+    {
+        "uniqueId": "usaco-1348",
+        "name": "Cowntact Tracing 2",
+        "difficulty": "Bronze",
+        "tags": [
+            "Graphs & Trees",
+            "Greedy & Implementation"
+        ],
+        "url": "http://www.usaco.org/index.php?page=viewproblem2&cpid=1348",
+        "text": "\nFarmer John has $N$ cows in a line ($1 \\leq N \\leq 3\\cdot 10^5$). Unfortunately,\nthere is a sickness spreading throughout. \n\nInitially, some cows start off infected. Every night, an infected cow spreads\nthe sickness to the cows on their left and right (if they exist). Once a cow is\ninfected, she stays infected.\n\nAfter some amount of nights, Farmer John realizes that the issue has gotten out\nof control, so he tests his cows to determine who has the sickness. Find the\nminimum number of cows that could have started with the sickness. \n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe first line contains $N$, the number of cows that Farmer John has.\n\nThe next line contains an $N$ character bitstring of only $1$s and $0$s where a\n$1$ represents an infected cow and a $0$ represents an uninfected cow after some\nnumber of nights.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nOutput a single integer: the minimum number of cows that could have started \nwith the sickness.\n\nSAMPLE INPUT:\n5\n11111\nSAMPLE OUTPUT: \n1\n\nSuppose the middle cow was the only cow to start off infected. Then the cows \nwould be infected in the following order:\n\n\n0 nights:    00100 (the third cow is initially infected)\n1 night:  -> 01110 (the second and fourth cows are now infected)\n2 nights: -> 11111 (the first and fifth cows are now infected)\n3 nights: -> 11111 (all cows already were infected, so no additional cows are infected)\n          -> ...\n\nAfter two or more nights, the final state of the cows would look like the input.\nThere are many other initial states and number of nights that could have\nproduced the input state, such as:\n\n\n0 nights:    10001\n1 night:  -> 11011\n2 nights: -> 11111\n\nor:\n\n\n0 nights:    01001\n1 night:  -> 11111\n\nor:\n\n\n0 nights:    01000\n1 night:  -> 11100\n2 nights: -> 11110\n3 nights: -> 11111\n\nAll of these initial states contain at least one infected cow.\n\nSAMPLE INPUT:\n6\n011101\nSAMPLE OUTPUT: \n4\n\nThe only initial state and number of nights that could have led to this final\nstate is if no nights have passed and each of the four infected cows in the\ninput started off with the sickness.\n\nSCORING:\nInputs 3-7: $N \\le 1000$Inputs 8-12: No additional constraints.\n\n\nProblem credits: Suhas Nagar\n",
+        "constraints": [
+            300000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1349",
+        "name": "Farmer John Actually Farms",
+        "difficulty": "Bronze",
+        "tags": [
+            "Search & Sort",
+            "Greedy & Implementation",
+            "Math & Combinatorics"
+        ],
+        "url": "http://www.usaco.org/index.php?page=viewproblem2&cpid=1349",
+        "text": "\nFarmer John is growing $N$ ($1 \\leq N \\leq 2\\cdot 10^5$) plants of asparagus on\nhis farm! However some of his plants have genetic differences, so some plants\nwill grow faster than others. The initial height of the $i$th plant is $h_i$\ninches, and after each day, the $i$th plant grows by $a_i$ inches. \n\nFJ likes some of his plants more than others, and he wants some specific plants\nto be taller than others. He gives you an array of distinct values\n$t_1,\\dots,t_N$ containing all integers from $0$ to $N-1$ and he wants the $i$th\nplant to have exactly $t_i$ other plants that are taller than it. Find the\nminimum number of days so that FJ's request is satisfied, or determine that it\nis impossible.\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe first will consist of an integer $T$, denoting the number of independent\ntest cases $(1 \\leq T \\leq 10)$.\n\nThe first line of each test case consists of an integer $N$.\n\nThe second line consists of $N$ integers $h_i$ $(1 \\leq h_i \\leq 10^9)$ denoting\nthe initial height of the $i$th plant in inches.\n\nThe third line consists of $N$ integers $a_i$ $(1 \\leq a_i \\leq 10^9)$ denoting\nthe number of inches the $i$th plant grows each day.\n\nThe fourth line consists of $N$ distinct integers $t_i$ denoting the array that\nFJ gives you.\n\nIt is guaranteed that the sum of $N$ over all test cases does not exceed\n$2\\cdot 10^5$.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nOutput $T$ lines, the answer to each test case on a different line. If it is not\npossible, output $-1$.\n\nNote that the large size of integers involved in this problem may require the\nuse of 64-bit integer data types (e.g., a \"long long\" in C/C++).\nSAMPLE INPUT:\n6\n1\n10\n1\n0\n2\n7 3\n8 10\n1 0\n2\n3 6\n10 8\n0 1\n2\n7 3\n8 9\n1 0\n2\n7 7\n8 8\n0 1\n2\n7 3\n8 8\n1 0\nSAMPLE OUTPUT: \n0\n3\n2\n5\n-1\n-1\n\nIn the first sample input, there are 6 test cases.\n\nIn the first test case, there is only one plant, so the condition is satisfied\non day 0.\n\nIn the second test case, we need the first plant to be shorter than the second\nplant.  After day 1, the heights are 15 and 13.  After day 2, the heights are\nboth 23.  After day 3, the heights are 31 and 33, and that's the first day in\nwhich the condition is satisfied.\n\nThe third and fourth test cases are similar to the second.\n\nIn the fifth test case, both plants start with an initial height of 7 and a\ngrowth rate of 8.  So they will always have identical heights, and therefore the\ncondition is never satisfied.\n\nIn the sixth test case, the condition is not satisfied initially and the growth\nrates are the same. So the condition can never be satisfied.\n\nSAMPLE INPUT:\n2\n5\n7 4 1 10 12\n3 4 5 2 1\n2 1 0 3 4\n5\n4 10 12 7 1\n3 1 1 4 5\n2 4 3 1 0\nSAMPLE OUTPUT: \n4\n7\n\nIn the second sample input, there are 2 test cases.\n\nIn the first test case, the final heights after day 4 are 19, 20, 21, 18, 16.\n\nIn the second test case, the final heights after day 7 are 25, 17, 19, 35, 36.\n\nSCORING:\nInput 3: $N \\le 2$Inputs 4-5: $N \\le 50$ and $a_i, h_i \\le 10^3$Inputs 6-8: $N \\le 10^3$Inputs 9-13: No additional constraints.\n\n\nProblem credits: Chongtian Ma\n",
+        "constraints": [
+            200000
+        ]
+    },
+    {
+        "uniqueId": "usaco-1371",
+        "name": "Majority Opinion",
+        "difficulty": "Bronze",
+        "tags": [
+            "Greedy & Implementation"
+        ],
+        "url": "http://www.usaco.org/index.php?page=viewproblem2&cpid=1371",
+        "text": "\nFarmer John has an important task - figuring out what type of hay to buy for his\ncows.\n\nFarmer John's $N$ cows ($2 \\le N \\le 10^5$) are numbered $1$ through $N$ and\neach cow likes exactly one type of hay $h_i$ ($1 \\le h_i \\le N$). He wants all\nhis cows to like the same type of hay.\n\nTo make this happen, Farmer John can host focus groups. A focus group consists\nof getting all cows in a contiguous range numbered $i$ to $j$, inclusive,\ntogether for a meeting. If there is a type of hay that more than half the cows\nin the group like, then after the focus group finishes meeting, all cows end up\nliking that type of hay. If no such type of hay exists, then no cows change the\ntype of hay they like.  For example, in focus group consisting of a range of 16\ncows, 9 or more of them would need to have the same hay preference to cause the\nremaining cows to switch their preference to match.\n\nFarmer John wants to know which types of hay can become liked by all cows\nsimultaneously. He can only host one focus group at a time, but he can run as\nmany focus groups as necessary to get all cows to like the same type of hay.\n\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe first will consist of an integer $T$, denoting the number of independent\ntest cases $(1 \\leq T \\leq 10)$.\n\nThe first line of each test case consists of $N$.\n\nThe second line consists of $N$ integers, the favorite types of hay $h_i$ for\nthe cows in order.\n\nIt is guaranteed that the sum of $N$ over all test cases does not exceed\n$2\\cdot 10^5$.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nOutput $T$ lines, one line per test case.\n\nIf it possible to make all cows like the same type of hay simultaneously, output\nall possible such types of hay in increasing order. Otherwise, output $-1$. \nWhen printing a list of numbers on the same line, separate adjacent numbers with\na space, and be sure the line does not end with any extraneous spaces.\n\nSAMPLE INPUT:\n5\n5\n1 2 2 2 3\n6\n1 2 3 1 2 3\n6\n1 1 1 2 2 2\n3\n3 2 3\n2\n2 1\nSAMPLE OUTPUT: \n2\n-1\n1 2\n3\n-1\n\nIn the sample input, there are 5 test cases.\n\nIn the first test case, it is only possible to make all cows like type 2. FJ can\ndo this by running a single focus group with all cows.\n\nIn the second test case, we can show that no cows will change which type of hay\nthey like.\n\nIn the third test case, it is possible to make all cows like type 1 by running\nthree focus groups - first by having cows 1 through 4 in a focus group, then by\nhaving cows 1 through 5 in a focus group, then by having cows 1 through 6 in a\nfocus group. By similar logic, using cows 3 through 6, cows 2 through 6, then\ncows 1 through 6, we can make all cows like type 2.\n\nIn the fourth test case, it is possible to make all cows like type 3 by running\na single focus group with all cows.\n\nIn the fifth test case, we can show that no cows will change which type of hay\nthey like. \n\nSCORING:\nInput 2: $N = 2$.Inputs 3-4: $N \\le 50$.Inputs 5-6: $h_i \\le h_{i+1}$ for all $1 \\le i \\le N-1$.Inputs 7-15: No additional constraints.\n\n\nProblem credits: Nick Wu\n",
+        "constraints": [
+            100000,
+            10
+        ]
+    },
+    {
+        "uniqueId": "usaco-1373",
+        "name": "Balancing Bacteria",
+        "difficulty": "Bronze",
+        "tags": [
+            "Greedy & Implementation",
+            "Math & Combinatorics"
+        ],
+        "url": "http://www.usaco.org/index.php?page=viewproblem2&cpid=1373",
+        "text": "\nFarmer John has $N$ ($1\\le N\\le 2\\cdot 10^5$) patches of grass in a line, where\npatch $i$ has a level of bacteria that differs by $a_i$ from that of healthy\ngrass ($-10^{15}\\le a_i \\le 10^{15}$).  For example, if $a_i = -3$, then patch\n$i$ has a level of bacteria 3 lower than normal, and would need exactly 3\nadditional units of bacteria added to raise it to the point where it is\nconsidered healthy.\n\nFarmer John wants to ensure every patch of grass is corrected to have a healthy\nlevel of bacteria.  Conveniently, he owns two brands of pesticide that he can\nspray on his field, one that adds bacteria and one that removes bacteria. When\nFarmer John sprays either type of pesticide, he stands in patch $N$ (the\nrightmost patch) and selects a power level $L$ for his sprayer ($1 \\leq L \\leq N$).  \n\nThe sprayer has the most impact on patches near Farmer John, with diminishing\neffect farther away.  If Farmer John chooses the pesticide that adds bacteria,\nthen $L$ units of bacteria will be added to patch $N$, $L-1$ units to patch\n$N-1$, $L-2$ units to patch $N-2$, and so on.  Patches $1 \\ldots N-L$ will\nreceive no bacteria, since the sprayer isn't set to a level powerful enough to\nreach them.   Similarly, if Farmer John chooses the pesticide that removes\nbacteria, then $L$ units of bacteria will be removed from patch $N$, $L-1$ units\nwill be removed from patch $N-1$, and so on.  Again, patches $1 \\ldots N-L$ will\nbe unaffected.\n\nFind the minimum number of times Farmer John has to apply his sprayer such that\nevery patch of grass has the recommended value of bacteria for healthy grass. It\nis guaranteed that the answer is at most $10^9$.\n\nNote that the large size of integers involved in this problem may require the\nuse of 64-bit integer data types (e.g., a \"long long\" in C/C++).\nINPUT FORMAT (input arrives from the terminal / stdin):\nThe first line contains $N$.\n\nThe second line contains $N$ integers $a_1\\dots a_N$, the initial bacteria\nlevels of each patch of grass.\n\nOUTPUT FORMAT (print output to the terminal / stdout):\nThe minimum number of applications necessary to make every patch of grass have\nthe recommended value of bacteria for healthy grass.\n\nSAMPLE INPUT:\n2\n-1 3\nSAMPLE OUTPUT: \n6\n\nUse the type of pesticide that removes bacteria, at a power level of 1, five\ntimes. Then use the type of pesticide that adds bacteria, with a power level of\n$2$, one time.\n\nSAMPLE INPUT:\n5\n1 3 -2 -7 5\nSAMPLE OUTPUT: \n26\n\nSCORING:\nInputs 3-5: $N \\le 10^3$, the answer is at most $10^3$ Inputs\n6-10: $N \\le 10^3$ Inputs 11-15: No additional constraints. \n\n\nProblem credits: Rohin Garg\n",
+        "constraints": [
+            200000
+        ]
+    }
+]
