@@ -8,3 +8,6 @@ Predicting the tags of competitive programming problems can guide learning and p
 
 **Figure 1 | Data sourcing, filtering, and tagging workflow.**        
 **Figure 2 | TF-IDF and Numeric Feature Extraction for linear model training workflow**
+
+
+Full manuscript in preparation
